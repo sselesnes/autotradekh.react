@@ -12,7 +12,7 @@
     "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": false, // Змінено на false
+    "noEmit": false,
     "jsx": "react-jsx",
     "composite": true, // Додано
 
