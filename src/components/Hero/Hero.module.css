@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 5rem;
+  line-height: 1;
+}
+.container button {
+  font-size: 5.8rem;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    font-size: 13rem;
+  }
+  .container button {
+    font-size: 15rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    font-size: 22rem;
+  }
+  .container button {
+    font-size: 25.5rem;
+  }
+}
