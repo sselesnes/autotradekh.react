@@ -1,5 +1,24 @@
 import css from "./Header.module.css";
-import reactLogo from "../../assets/react.svg";
+import telegramLogo from "../../assets/telegram.webp";
+import viberLogo from "../../assets/viber.webp";
 export default function Header() {
-  return <div>header</div>;
+  return (
+    <header className={css.container}>
+      <div className={css.phone}>
+        <a href="tel:+380956196756">095 619 67 56</a>
+      </div>
+      <div className={css.messengers}>
+        <div className={css.telegram}>
+          <a href="https://t.me/+380956196756">
+            <img src={telegramLogo} alt="telegram" />
+          </a>
+        </div>
+        <div className={css.viber}>
+          <a href="viber://chat?number=%2B380956196756">
+            <img src={viberLogo} alt="viber" />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 }

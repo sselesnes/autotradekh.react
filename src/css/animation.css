@@ -1,0 +1,8 @@
+a[href]:hover {
+  /* display: inline-block; */
+  /* -webkit-transform: scale(1.1); */
+  /* transform: scale(1.03); */
+  /* -webkit-transition: transform 0.2s ease-in-out; */
+  color: var(--blue-soft);
+  transition: transform 0.2s ease-in-out;
+}

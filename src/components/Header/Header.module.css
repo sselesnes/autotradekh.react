@@ -1,8 +1,28 @@
 .container {
-  padding: 24px;
+  padding-top: 16px;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.phone {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.messengers {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.telegram,
+.viber {
+  width: 24px;
 }
