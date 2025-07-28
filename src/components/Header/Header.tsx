@@ -1,6 +1,8 @@
 import css from "./Header.module.css";
 import telegramLogo from "../../assets/telegram.webp";
 import viberLogo from "../../assets/viber.webp";
+import tiktokLogo from "../../assets/tiktok.svg";
+
 export default function Header() {
   return (
     <header className={css.container}>
@@ -8,6 +10,12 @@ export default function Header() {
         <a href="tel:+380956196756">095 619 67 56</a>
       </div>
       <div className={css.messengers}>
+        <div className={css.telegram}>
+          <a href="https://www.tiktok.com/@auto_trade_kh">
+            <img src={tiktokLogo} alt="tiktok" />
+          </a>
+        </div>
+
         <div className={css.telegram}>
           <a href="https://t.me/+380956196756">
             <img src={telegramLogo} alt="telegram" />
