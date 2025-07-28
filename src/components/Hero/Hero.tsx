@@ -4,7 +4,7 @@ import arrow_right from "../../assets/arrow-right.svg";
 
 export default function Hero() {
   return (
-    <section role="banner" aria-labelledby="hero-title">
+    <section role="banner" aria-labelledby="hero">
       <h1 className={css.banner_main}>
         Терміновий викуп будь-яких
         <br />

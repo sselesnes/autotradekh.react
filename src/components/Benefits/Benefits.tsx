@@ -81,7 +81,7 @@ export default function Benefits() {
 
   return (
     <section className={css.container}>
-      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ НАС?</h1>
+      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH?</h1>
       {randomBenefits.length && (
         <ul className={css.benefits}>
           {randomBenefits.map((benefit, index) => (
