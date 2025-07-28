@@ -1,6 +1,6 @@
 import css from "./Benefits.module.css";
 import type { Benefit } from "../../types/types";
-// import car from "../../assets/alfa-romeo-147.webp";
+import svg_ok from "../../assets/ok.svg";
 
 const benefits: Benefit[] = [
   {
@@ -35,6 +35,45 @@ const benefits: Benefit[] = [
     title: "Швидка оцінка авто",
     describe: "Не потрібно їхати на жодні СТО, ми оцінимо ваше авто на місці безкоштовно.",
   },
+  {
+    title: "Викуп авто в будь-якому стані",
+    describe:
+      "Ми викуповуємо автомобілі незалежно від їх технічного стану чи зовнішнього вигляду.",
+  },
+  {
+    title: "Безкоштовна консультація",
+    describe: "Наші фахівці нададуть професійну консультацію щодо вартості та умов викупу.",
+  },
+  {
+    title: "Економія вашого часу",
+    describe:
+      "Ми беремо на себе всі клопоти з продажу авто, щоб ви могли займатися своїми справами.",
+  },
+  {
+    title: "Прозора оцінка вартості",
+    describe: "Наші експерти надають чітке пояснення, як формується ціна вашого авто.",
+  },
+  {
+    title: "Відсутність прихованих платежів",
+    describe: "Ви не платите жодних додаткових комісій чи зборів за наші послуги.",
+  },
+  {
+    title: "Викуп авто після ДТП",
+    describe: "Ми готові викупити ваш автомобіль навіть після аварії чи серйозних пошкоджень.",
+  },
+  {
+    title: "Цілодобова підтримка",
+    describe: "Наша команда доступна 24/7 для консультацій та організації викупу.",
+  },
+  {
+    title: "Гнучкий графік роботи",
+    describe: "Ми працюємо у зручний для вас час, включаючи вихідні та святкові дні.",
+  },
+  {
+    title: "Допомога з переоформленням",
+    describe:
+      "Ми беремо на себе всі формальності з переоформлення документів у державних органах.",
+  },
 ];
 
 export default function Benefits() {
@@ -42,11 +81,15 @@ export default function Benefits() {
 
   return (
     <section className={css.container}>
+      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ НАС?</h1>
       {randomBenefits.length && (
         <ul className={css.benefits}>
           {randomBenefits.map((benefit, index) => (
-            <li key={index} className={css.benefitItem}>
-              <h2 className={css.title}>{benefit.title}</h2>
+            <li key={index} className={css.benefit_item}>
+              <div className={css.benefit_title}>
+                <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
+                <h2 className={css.main}> {benefit.title}</h2>
+              </div>
               <p className={css.describe}>{benefit.describe}</p>
             </li>
           ))}

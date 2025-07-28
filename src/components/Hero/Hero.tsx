@@ -1,7 +1,6 @@
 import css from "./Hero.module.css";
 import car from "../../assets/alfa-romeo-147.webp";
 import arrow_right from "../../assets/arrow-right.svg";
-// ;
 
 export default function Hero() {
   return (
