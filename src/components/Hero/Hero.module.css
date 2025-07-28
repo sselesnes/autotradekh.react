@@ -1,5 +1,5 @@
 .banner_main {
-  padding-top: 32px;
+  padding-top: 24px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -9,7 +9,7 @@
   color: var(--blue);
 }
 .banner_sub {
-  padding-top: 12px;
+  padding-top: 24px;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
@@ -32,7 +32,7 @@
 }
 
 .banner_content {
-  padding-top: 12px;
+  padding-top: 24px;
   text-align: center;
   font-size: 1rem;
   font-weight: 400;

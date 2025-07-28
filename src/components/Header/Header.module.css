@@ -1,23 +1,42 @@
 .container {
+  height: 40px;
   padding-top: 16px;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+}
+.autotradekh_logo_wrapper {
+  /* padding-left: 20px; */
+  position: absolute;
+}
+
+.autotradekh_logo {
+  /* width: 72px; */
+  height: 24px;
 }
 
 .phone {
+  padding-left: 40px;
   text-decoration: none;
   font-size: 18px;
   color: var(--blue);
   cursor: pointer;
   font-weight: 600;
+  line-height: 1;
+  align-self: center;
+  position: absolute;
 }
 
 .messengers {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 8px;
+  position: absolute;
+  right: 0;
 }
 
 .tiktok,
