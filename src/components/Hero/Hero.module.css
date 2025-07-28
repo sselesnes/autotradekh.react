@@ -15,7 +15,24 @@
   font-weight: 600;
   line-height: 1;
   color: var(--blue);
+  position: relative; /* Точка відліку для .arrow_right */
+  display: inline-block; /* Для збереження центрованого вирівнювання */
 }
+
+.arrow_left,
+.arrow_right {
+  position: absolute;
+  width: 40px;
+  top: 60%;
+  left: -8px;
+  transform: translateY(-50%);
+}
+.arrow_right {
+  top: 25%;
+  left: 90%;
+  transform: scaleX(-1);
+}
+
 .banner_content {
   padding-top: 12px;
   text-align: center;
