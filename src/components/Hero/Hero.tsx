@@ -1,5 +1,5 @@
 import css from "./Hero.module.css";
-import car from "../../assets/car_big.webp";
+import car from "../../assets/alfa-romeo-147.webp";
 
 export default function Hero() {
   return (

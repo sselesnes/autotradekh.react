@@ -1,4 +1,4 @@
 export type Benefit = {
-  name: string;
-  color: string;
+  title: string;
+  describe: string;
 };
