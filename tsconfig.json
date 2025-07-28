@@ -1,6 +1,4 @@
 {
-  // "files": [],
-  // "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
     "target": "es6",
     "module": "esnext",
@@ -9,9 +7,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "lib": ["dom", "esnext"],
-    "declaration": true, // Додано для генерації .d.ts файлів
-    "declarationDir": "dist/types" // Вказуємо папку для .d.ts файлів
+    "lib": ["dom", "esnext"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
