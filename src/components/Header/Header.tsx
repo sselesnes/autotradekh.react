@@ -20,18 +20,20 @@ export default function Header() {
       gsap.set(phoneRef.current, { opacity: 0 });
 
       // Створюємо таймлайн для циклічної анімації
-      const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+      const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0 });
 
-      // Анімація: логотип зникає, телефон з'являється
-      tl.to(logoRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
-        .to(phoneRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3")
-        // Пауза на 3 секунди
+      timeline
+        // Анімація: логотип зникає, телефон з'являється
+        // Пауза
         .to({}, { duration: 5 })
+        .to(logoRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
+        .to(phoneRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3")
+
         // Анімація: телефон зникає, логотип з'являється
+        // Пауза
+        .to({}, { duration: 3 })
         .to(phoneRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
-        .to(logoRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3")
-        // Пауза на 3 секунди
-        .to({}, { duration: 2 });
+        .to(logoRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
     },
     { scope: container }
   );
