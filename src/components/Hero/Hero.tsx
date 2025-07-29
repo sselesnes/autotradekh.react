@@ -1,8 +1,30 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import css from "./Hero.module.css";
 import car from "../../assets/alfa-romeo-147.webp";
 import arrow_right from "../../assets/arrow-right.svg";
 
 export default function Hero() {
+  useGSAP(() => {
+    // Animate arrow_left
+    gsap.to(`.${css.arrow_left}`, {
+      x: 8, // Move 8px to the right
+      duration: 0.5,
+      repeat: -1, // Repeat indefinitely
+      yoyo: true, // Reverse back to original position
+      ease: "power1.inOut", // Smooth easing
+    });
+
+    // Animate arrow_right
+    gsap.to(`.${css.arrow_right}`, {
+      x: -8, // Move 8px to the left
+      duration: 0.5,
+      repeat: -1, // Repeat indefinitely
+      yoyo: true, // Reverse back to original position
+      ease: "power1.inOut", // Smooth easing
+    });
+  }, []);
+
   return (
     <section role="banner" aria-labelledby="hero">
       <h1 className={css.banner_main}>

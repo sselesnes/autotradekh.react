@@ -24,13 +24,10 @@ export default function Header() {
 
       timeline
         // Анімація: логотип зникає, телефон з'являється
-        // Пауза
         .to({}, { duration: 5 })
         .to(logoRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
         .to(phoneRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3")
-
         // Анімація: телефон зникає, логотип з'являється
-        // Пауза
         .to({}, { duration: 3 })
         .to(phoneRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
         .to(logoRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
