@@ -1,0 +1,27 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBtn {
+  position: fixed;
+  right: 32px;
+  bottom: 24px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: var(--blue);
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  max-width: 140px;
+}

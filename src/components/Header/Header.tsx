@@ -5,8 +5,8 @@ import tiktokLogo from "../../assets/tiktok.svg";
 import autotradekhLogo from "../../assets/autotradekh-logo2.webp";
 
 import { useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Header() {
   const container = useRef<HTMLDivElement>(null);

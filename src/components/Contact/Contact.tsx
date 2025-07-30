@@ -1,16 +1,3 @@
-// import css from "./Contact.module.css";
-// // import telegramLogo from "../../assets/telegram.webp";
-// // import viberLogo from "../../assets/viber.webp";
-// // import tiktokLogo from "../../assets/tiktok.svg";
-
-// export default function Contact() {
-//   return (
-//     <section className={css.container}>
-//       <p>Contact</p>
-//     </section>
-//   );
-// }
-
 import { useState, useEffect } from "react";
 import css from "./Contact.module.css";
 
