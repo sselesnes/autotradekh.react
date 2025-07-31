@@ -61,16 +61,33 @@ export default function Form() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, csrf_token: csrfToken }),
+        credentials: "include", // Додайте це, якщо ще не додали
       });
+
+      // Додайте цю перевірку
+      if (!response.ok) {
+        // Якщо відповідь не успішна, спробуємо отримати повідомлення з тіла відповіді.
+        // Якщо парсинг json не вдається, кидаємо власну помилку.
+        const errorData = await response.json().catch(() => {
+          throw new Error("Помилка: Некоректна відповідь від сервера");
+        });
+        throw new Error(errorData.message || "Помилка: Невідома помилка сервера");
+      }
 
       const result = await response.json();
       setFormMessage({ text: result.message, status: result.status });
       if (result.status === "success") {
-        setFormData({ name: "", phone: "", message: "" }); // Reset form on success
+        setFormData({ name: "", phone: "", message: "" });
       }
-    } catch {
-      setFormMessage({ text: "Помилка: Не вдалося відправити заявку", status: "error" });
     } finally {
+      // catch (error) {
+      //   // Тепер тут ви отримаєте повідомлення, яке ми викинули вище
+      //   // або стандартну мережеву помилку.
+      //   setFormMessage({
+      //     text: error.message || "Помилка: Не вдалося відправити заявку",
+      //     status: "error",
+      //   });
+      // }
       setIsSubmitting(false);
     }
   };

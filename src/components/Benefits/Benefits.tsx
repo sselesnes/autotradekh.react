@@ -1,8 +1,8 @@
+import { useState, useEffect, useRef } from "react";
 import css from "./Benefits.module.css";
-import type { Benefit } from "../../types/types";
 import svg_ok from "../../assets/ok.svg";
 
-const benefits: Benefit[] = [
+const benefits = [
   {
     title: "Максимально висока ціна",
     describe: "Ми намагаємось дати максимально високу ціну. Ми заробляємо на кількості авто.",
@@ -76,19 +76,45 @@ const benefits: Benefit[] = [
   },
 ];
 
+const getRandomBenefits = () => {
+  return [...benefits].sort(() => Math.random() - 0.5).slice(0, 4);
+};
+
 export default function Benefits() {
-  const randomBenefits = [...benefits].sort(() => Math.random() - 0.5).slice(0, 3);
+  const [currentBenefits, setCurrentBenefits] = useState(getRandomBenefits);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const intervalRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    intervalRef.current = window.setInterval(() => {
+      // Спочатку запускаємо зникнення
+      setIsFadingOut(true);
+
+      // Замінюємо бенефіти після завершення анімації зникнення (0.5s)
+      setTimeout(() => {
+        setCurrentBenefits(getRandomBenefits());
+        // Вимикаємо анімацію зникнення, щоб нові бенефіти з'явилися
+        setIsFadingOut(false);
+      }, 777); // Час має відповідати тривалості CSS-анімації
+    }, 7777); // Інтервал між повними циклами
+
+    return () => {
+      if (intervalRef.current !== null) {
+        window.clearInterval(intervalRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className={css.container}>
-      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH?</h1>
-      {randomBenefits.length && (
-        <ul className={css.benefits}>
-          {randomBenefits.map((benefit, index) => (
-            <li key={index} className={css.benefit_item}>
+      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ НАС?</h1>
+      {currentBenefits.length > 0 && (
+        <ul className={`${css.benefits} ${isFadingOut ? css.fading_out : css.fading_in}`}>
+          {currentBenefits.map(benefit => (
+            <li key={benefit.title} className={`${css.benefit_item} `}>
               <div className={css.benefit_title}>
                 <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
-                <h2 className={css.main}> {benefit.title}</h2>
+                <h2 className={css.main}>{benefit.title}</h2>
               </div>
               <p className={css.describe}>{benefit.describe}</p>
             </li>

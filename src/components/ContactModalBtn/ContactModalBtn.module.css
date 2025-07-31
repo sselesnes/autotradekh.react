@@ -12,16 +12,22 @@
 }
 
 .modalBtn {
+  z-index: 1;
   position: fixed;
   right: 32px;
   bottom: 24px;
-  padding: 8px 16px;
+  padding: 6px 10px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  background-color: var(--blue);
-  color: white;
+  background-color: white;
+  /* color: white; */
   font-weight: 400;
   text-transform: uppercase;
   max-width: 140px;
+}
+
+.phone {
+  /* position: absolute; */
+  width: 24px; /* svg 11x13 */
 }

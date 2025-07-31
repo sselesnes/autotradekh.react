@@ -15,8 +15,8 @@ try {
     $dotenv = Dotenv::createImmutable(__DIR__ . '/..'); // Load .env from /public_html/
     $dotenv->load();
 
-    $botToken = filter_var($_ENV['TELEGRAM_BOT_TOKEN'] ?? null, FILTER_SANITIZE_STRING);
-    $chatId = filter_var($_ENV['TELEGRAM_CHATID'] ?? null, FILTER_SANITIZE_STRING);
+    $botToken = filter_var($_ENV['TELEGRAM_BOT_TOKEN'] ?? null, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$chatId = filter_var($_ENV['TELEGRAM_CHATID'] ?? null, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     if (!$botToken || !$chatId) {
         file_put_contents(__DIR__ . '/debug.log', 'Помилка: Не вдалося завантажити TELEGRAM_BOT_TOKEN або TELEGRAM_CHATID' . "\n", FILE_APPEND);
@@ -26,10 +26,10 @@ try {
     }
 
     ini_set('session.cookie_httponly', 1);
-    ini_set('session.cookie_secure', 0); // Allow non-HTTPS for testing
+    ini_set('session.cookie_secure', 1); 
     ini_set('session.gc_maxlifetime', 1800);
     session_start();
-    session_regenerate_id(true);
+    // session_regenerate_id(true);
 
     $input = json_decode(file_get_contents('php://input'), true);
     if (!$input) {

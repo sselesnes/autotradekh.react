@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import Benefits from "../Benefits/Benefits";
 import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
+import Contact from "../Contact/Contact";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
       <Hero />
       <Benefits />
       <ContactModalBtn />
-      {/* <Contact /> */}
+      <Contact />
     </div>
   );
 }
