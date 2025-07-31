@@ -38,7 +38,7 @@ export default function Hero() {
       </p>
       <h2 className={css.banner_sub}>
         <img className={css.arrow_left} src={arrow_right} alt="Arrow" />
-        <a href="tel:+380956196756">Зателефонуйте</a> або залиште заявку
+        <a href="tel:+380956196756">Зателефонуйте</a> або <a href="#contact">залиште заявку</a>
         <img className={css.arrow_right} src={arrow_right} alt="Arrow" />
       </h2>
       <img className={css.car} src={car} alt="car" />
