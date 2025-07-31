@@ -95,7 +95,7 @@ export default function Benefits() {
         setCurrentBenefits(getRandomBenefits());
         // Вимикаємо анімацію зникнення, щоб нові бенефіти з'явилися
         setIsFadingOut(false);
-      }, 777); // Час має відповідати тривалості CSS-анімації
+      }, 333); // Час має відповідати тривалості CSS-анімації
     }, 7777); // Інтервал між повними циклами
 
     return () => {
@@ -107,7 +107,7 @@ export default function Benefits() {
 
   return (
     <section className={css.container}>
-      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ НАС?</h1>
+      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
       {currentBenefits.length > 0 && (
         <ul className={`${css.benefits} ${isFadingOut ? css.fading_out : css.fading_in}`}>
           {currentBenefits.map(benefit => (
