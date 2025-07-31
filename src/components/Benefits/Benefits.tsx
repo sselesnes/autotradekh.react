@@ -87,14 +87,22 @@ export default function Benefits() {
 
   useEffect(() => {
     intervalRef.current = window.setInterval(() => {
+      // Зберігаємо відстань від низу сторінки
+      const distanceFromBottom =
+        document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+
       // Спочатку запускаємо зникнення
       setIsFadingOut(true);
 
-      // Замінюємо бенефіти після завершення анімації зникнення (0.5s)
+      // Замінюємо бенефіти після завершення анімації зникнення
       setTimeout(() => {
         setCurrentBenefits(getRandomBenefits());
-        // Вимикаємо анімацію зникнення, щоб нові бенефіти з'явилися
+        // Вимикаємо анімацію зникнення, щоб нові бенефіти з’явилися
         setIsFadingOut(false);
+        // Відновлюємо позицію прокрутки, зберігаючи відстань від низу
+        const newScrollHeight = document.documentElement.scrollHeight;
+        const newScrollY = newScrollHeight - (window.innerHeight + distanceFromBottom);
+        window.scrollTo(0, newScrollY);
       }, 333); // Час має відповідати тривалості CSS-анімації
     }, 7777); // Інтервал між повними циклами
 
@@ -111,7 +119,7 @@ export default function Benefits() {
       {currentBenefits.length > 0 && (
         <ul className={`${css.benefits} ${isFadingOut ? css.fading_out : css.fading_in}`}>
           {currentBenefits.map(benefit => (
-            <li key={benefit.title} className={`${css.benefit_item} `}>
+            <li key={benefit.title} className={css.benefit_item}>
               <div className={css.benefit_title}>
                 <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
                 <h2 className={css.main}>{benefit.title}</h2>

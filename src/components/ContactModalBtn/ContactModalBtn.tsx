@@ -41,7 +41,9 @@ export default function ContactModalBtn() {
 
   return (
     <div className={css.modalBtn}>
-      <img ref={phoneRef} className={css.phone} src={phone} alt="Phone" />
+      <a href="#contact">
+        <img ref={phoneRef} className={css.phone} src={phone} alt="Phone" />
+      </a>
     </div>
   );
 }
