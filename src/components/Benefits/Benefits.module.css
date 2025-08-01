@@ -8,7 +8,7 @@
   padding-top: 16px;
   transition: opacity 0.5s ease-in-out;
   color: var(--blue);
-  height: 400px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
