@@ -6,11 +6,3 @@ a[href]:hover {
   color: var(--blue-soft);
   transition: transform 0.2s ease-in-out;
 }
-
-.fading_out {
-  opacity: 0;
-}
-
-.fading_in {
-  opacity: 1;
-}
