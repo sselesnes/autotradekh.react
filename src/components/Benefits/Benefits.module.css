@@ -1,34 +1,23 @@
-.benefits {
-  transition: opacity 0.5s ease-in-out;
-  color: var(--blue);
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
 .benefits_title {
   padding-top: 24px;
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.3;
 }
+.benefits_list {
+  transition: opacity 0.5s ease-in-out;
+  color: var(--blue);
+  height: 425px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
 .benefit_item {
-  padding-top: 24px;
+  padding-top: 16px;
 
   /* position: relative;
   transition: none; */
-}
-
-/* Клас для анімації зникнення */
-.fading_out {
-  opacity: 0;
-}
-
-/* Клас для анімації появи */
-.fading_in {
-  opacity: 1;
 }
 
 .benefit_title {

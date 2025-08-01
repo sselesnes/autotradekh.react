@@ -43,28 +43,27 @@ export default function Form() {
     setFormMessage({ text: "", status: null });
 
     // Client-side phone validation
-    // const phoneRegex = /^\+?[0-9\s\-()]{7,15}$/;
-    // if (!phoneRegex.test(formData.phone)) {
-    //   setFormMessage({ text: "Помилка: Некоректний номер телефону", status: "error" });
-    //   setIsSubmitting(false);
-    //   return;
-    // }
-
-    if (!formData.name || !formData.phone || !formData.message) {
-      setFormMessage({ text: "Помилка: Усі поля мають бути заповнені", status: "error" });
+    const phoneRegex = /^\+?[0-9\s\-()]{7,15}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setFormMessage({ text: "Помилка: Некоректний номер телефону", status: "error" });
       setIsSubmitting(false);
       return;
     }
+
+    // if (!formData.name || !formData.phone || !formData.message) {
+    //   setFormMessage({ text: "Помилка: Усі поля мають бути заповнені", status: "error" });
+    //   setIsSubmitting(false);
+    //   return;
+    // }
 
     try {
       const response = await fetch("/api/submit.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, csrf_token: csrfToken }),
-        credentials: "include", // Додайте це, якщо ще не додали
+        credentials: "include",
       });
 
-      // Додайте цю перевірку
       if (!response.ok) {
         // Якщо відповідь не успішна, спробуємо отримати повідомлення з тіла відповіді.
         // Якщо парсинг json не вдається, кидаємо власну помилку.
@@ -80,14 +79,6 @@ export default function Form() {
         setFormData({ name: "", phone: "", message: "" });
       }
     } finally {
-      // catch (error) {
-      //   // Тепер тут ви отримаєте повідомлення, яке ми викинули вище
-      //   // або стандартну мережеву помилку.
-      //   setFormMessage({
-      //     text: error.message || "Помилка: Не вдалося відправити заявку",
-      //     status: "error",
-      //   });
-      // }
       setIsSubmitting(false);
     }
   };
@@ -114,7 +105,7 @@ export default function Form() {
           onChange={handleInputChange}
           required
           //   pattern="\+?[0-9\s\-()]{7,15}"
-          title="Введіть коректний номер телефону (7-15 цифр, можливі пробіли, дефіси, дужки)"
+          title="Введіть коректний номер телефону (10 цифр, можливі пробіли, дефіси, дужки)"
           className={css.input}
         />
         <textarea
@@ -122,7 +113,6 @@ export default function Form() {
           placeholder="Марка, модель, стан авто"
           value={formData.message}
           onChange={handleInputChange}
-          required
           className={css.textarea}
         />
         <button type="submit" disabled={isSubmitting} className={css.submitButton}>

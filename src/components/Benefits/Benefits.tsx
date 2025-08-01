@@ -118,7 +118,7 @@ export default function Benefits() {
     <section className={css.benefits}>
       <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
       {currentBenefits.length > 0 && (
-        <ul className={`${css.benefits} ${isFadingOut ? css.fading_out : css.fading_in}`}>
+        <ul className={`${css.benefits_list} ${isFadingOut ? css.fading_out : css.fading_in}`}>
           {currentBenefits.map(benefit => (
             <li key={benefit.title} className={css.benefit_item}>
               <div className={css.benefit_title}>
