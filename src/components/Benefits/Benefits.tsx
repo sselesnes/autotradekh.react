@@ -88,8 +88,8 @@ export default function Benefits() {
   useEffect(() => {
     intervalRef.current = window.setInterval(() => {
       // Зберігаємо відстань від низу сторінки
-      const distanceFromBottom =
-        document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      // const distanceFromBottom =
+      //   document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
 
       // Спочатку запускаємо зникнення
       setIsFadingOut(true);
@@ -99,10 +99,11 @@ export default function Benefits() {
         setCurrentBenefits(getRandomBenefits());
         // Вимикаємо анімацію зникнення, щоб нові бенефіти з’явилися
         setIsFadingOut(false);
+
         // Відновлюємо позицію прокрутки, зберігаючи відстань від низу
-        const newScrollHeight = document.documentElement.scrollHeight;
-        const newScrollY = newScrollHeight - (window.innerHeight + distanceFromBottom);
-        window.scrollTo(0, newScrollY);
+        // const newScrollHeight = document.documentElement.scrollHeight;
+        // const newScrollY = newScrollHeight - (window.innerHeight + distanceFromBottom);
+        // window.scrollTo(0, newScrollY);
       }, 333); // Час має відповідати тривалості CSS-анімації
     }, 7777); // Інтервал між повними циклами
 
@@ -114,7 +115,7 @@ export default function Benefits() {
   }, []);
 
   return (
-    <section className={css.container}>
+    <section className={css.benefits}>
       <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
       {currentBenefits.length > 0 && (
         <ul className={`${css.benefits} ${isFadingOut ? css.fading_out : css.fading_in}`}>

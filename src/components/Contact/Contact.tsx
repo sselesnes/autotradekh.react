@@ -94,7 +94,7 @@ export default function Form() {
 
   return (
     <section id="contact" className={css.formSection}>
-      <h2>Залишити заявку</h2>
+      <h2 className={css.formTitle}>Залишити заявку</h2>
       <form onSubmit={handleSubmit} className={css.form}>
         <input type="hidden" name="csrf_token" value={csrfToken} />
         <input

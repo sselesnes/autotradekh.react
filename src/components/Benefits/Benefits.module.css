@@ -1,6 +1,10 @@
 .benefits {
   transition: opacity 0.5s ease-in-out;
   color: var(--blue);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .benefits_title {

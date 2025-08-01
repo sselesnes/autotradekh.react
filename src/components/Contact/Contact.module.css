@@ -1,17 +1,11 @@
-.container {
-  padding-top: 16px;
-  text-align: center;
-  /* display: flex;
-  flex-direction: row; */
-  justify-content: space-between;
-}
-
 .formSection {
   max-width: 500px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 24px;
 }
-
+.formTitle {
+  padding-bottom: 16px;
+}
 .form {
   display: flex;
   flex-direction: column;
