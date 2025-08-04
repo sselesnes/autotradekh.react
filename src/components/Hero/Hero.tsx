@@ -28,17 +28,25 @@ export default function Hero() {
 
   return (
     <section role="banner" aria-labelledby="hero">
-      <h1 className={css.banner_main}>
-        Терміновий викуп будь-яких
-        <br />
-        автомобілів в Харкові та області
-      </h1>
+      <h1 className={css.banner_main}>Терміновий викуп авто в Харкові</h1>
       <p className={css.banner_content}>
-        Отримайте до 95% вартості Вашого авто на руки вже сьогодні
+        Наш сервіс пропонує швидкий і безпечний викуп автомобілів.
+        <br></br>
+        <br></br>Ми купуємо будь-які машини: цілі, після аварій, пожеж, а також ті, що мають
+        проблеми з документами або знаходяться в кредиті.
+        <br></br>
+        <br></br>Щоб дізнатися вартість свого авто, просто заповніть форму на сайті або
+        зв'яжіться з нами телефоном.
       </p>
       <h2 className={css.banner_sub}>
         <img className={css.arrow_left} src={arrow_right} alt="Arrow" />
-        <a href="tel:+380956196756">Зателефонуйте</a> або <a href="#contact">залиште заявку</a>
+        <a className={css.button} href="tel:+380956196756">
+          Зателефонуйте
+        </a>
+        <p>або</p>
+        <a className={css.button} href="#contact">
+          залиште заявку
+        </a>
         <img className={css.arrow_right} src={arrow_right} alt="Arrow" />
       </h2>
       <img className={css.car} src={car} alt="car" />

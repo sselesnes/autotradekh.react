@@ -1,8 +1,11 @@
-a[href] {
-  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+a[href],
+button {
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
-a[href]:hover {
-  color: var(--blue-soft);
-  transition: transform 0.2s ease-in-out;
+a[href]:hover,
+button:hover {
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }

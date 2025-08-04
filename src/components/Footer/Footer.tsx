@@ -1,7 +1,7 @@
 import css from "./Footer.module.css";
 import telegramLogo from "../../assets/telegram.webp";
 import viberLogo from "../../assets/viber.webp";
-import tiktokLogo from "../../assets/tiktok.svg";
+// import tiktokLogo from "../../assets/tiktok.svg";
 import autotradekhLogo from "../../assets/autotradekh-logo2.webp";
 
 export default function Footer() {
@@ -11,11 +11,11 @@ export default function Footer() {
         <a href="tel:+380956196756">095 619 67 56</a>
       </div>
       <div className={css.messengers}>
-        <div className={css.telegram}>
+        {/* <div className={css.tiktok}>
           <a href="https://www.tiktok.com/@auto_trade_kh" target="_blank">
             <img src={tiktokLogo} alt="tiktok" />
           </a>
-        </div>
+        </div> */}
 
         <div className={css.telegram}>
           <a href="https://t.me/+380956196756" target="_blank">

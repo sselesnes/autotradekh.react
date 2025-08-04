@@ -32,7 +32,9 @@
   align-self: center;
   /* position: absolute; */
 }
-
+.phone:hover {
+  color: var(--blue-soft);
+}
 .messengers {
   display: flex;
   flex-direction: row;

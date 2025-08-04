@@ -4,9 +4,11 @@
   justify-content: center;
   text-align: center;
   font-size: 1.8rem;
+  font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--accet-green);
+  /* color: var(--blue); */
 }
 .banner_sub {
   padding-top: 24px;
@@ -18,30 +20,56 @@
   position: relative;
   /* display: inline-block;*/
 }
-
+.banner_sub p {
+  color: var(--black);
+  padding: 32px;
+}
 .arrow_left,
 .arrow_right {
   position: absolute;
   width: 40px;
-  top: 44%;
-  left: -8px;
+  top: 10%;
+  left: -3px;
 }
 .arrow_right {
+  top: 80%;
   left: 90%;
   transform: scaleX(-1);
 }
 
 .banner_content {
-  padding-top: 24px;
+  padding: 24px 0;
   text-align: center;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.1;
   color: var(--black);
+  white-space: pre-wrap;
 }
 .car {
-  padding-top: 16px;
+  padding-top: 32px;
   width: 100%;
+}
+
+.button {
+  padding: 12px 24px;
+  background-color: var(--accet-green);
+  /* background-color: #28a745 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.button:hover {
+  background-color: var(--accet-green-dt);
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 @media only screen and (min-width: 768px) {

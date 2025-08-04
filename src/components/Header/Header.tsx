@@ -1,7 +1,7 @@
 import css from "./Header.module.css";
 import telegramLogo from "../../assets/telegram.webp";
 import viberLogo from "../../assets/viber.webp";
-import tiktokLogo from "../../assets/tiktok.svg";
+// import tiktokLogo from "../../assets/tiktok.svg";
 import autotradekhLogo from "../../assets/autotradekh-logo2.webp";
 
 import { useRef } from "react";
@@ -15,22 +15,31 @@ export default function Header() {
 
   useGSAP(
     () => {
-      // Ініціалізація елементів у початковому стані
-      gsap.set(logoRef.current, { opacity: 1 });
-      gsap.set(phoneRef.current, { opacity: 0 });
+      const mediaQuery = window.matchMedia("(max-width: 767px)");
 
-      // Створюємо таймлайн для циклічної анімації
-      const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+      const handleAnimation = () => {
+        if (mediaQuery.matches) {
+          gsap.set(logoRef.current, { opacity: 1 });
+          gsap.set(phoneRef.current, { opacity: 0 });
 
-      timeline
-        // Анімація: логотип зникає, телефон з'являється
-        .to({}, { duration: 5 })
-        .to(logoRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
-        .to(phoneRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3")
-        // Анімація: телефон зникає, логотип з'являється
-        .to({}, { duration: 3 })
-        .to(phoneRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
-        .to(logoRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
+          const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+          timeline
+            .to({}, { duration: 5 })
+            .to(logoRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
+            .to(phoneRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3")
+            .to({}, { duration: 3 })
+            .to(phoneRef.current, { opacity: 0, duration: 0.3, ease: "power2.inOut" })
+            .to(logoRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
+        } else {
+          gsap.set([logoRef.current, phoneRef.current], { opacity: 1 });
+          gsap.killTweensOf([logoRef.current, phoneRef.current]); // Зупиняємо всі анімації
+        }
+      };
+
+      handleAnimation(); // Виклик при ініціалізації
+      mediaQuery.addEventListener("change", handleAnimation); // Реакція на зміну розміру
+
+      return () => mediaQuery.removeEventListener("change", handleAnimation); // Очищення
     },
     { scope: container }
   );
@@ -45,11 +54,11 @@ export default function Header() {
       </div>
 
       <div className={css.messengers}>
-        <div className={css.telegram}>
+        {/* <div className={css.tiktok}>
           <a href="https://www.tiktok.com/@auto_trade_kh" target="_blank">
             <img src={tiktokLogo} alt="tiktok" />
           </a>
-        </div>
+        </div> */}
 
         <div className={css.telegram}>
           <a href="https://t.me/+380956196756" target="_blank">
