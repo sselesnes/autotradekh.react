@@ -22,7 +22,7 @@
   padding-left: 40px;
   text-decoration: none;
   font-size: 18px;
-  color: var(--blue);
+  color: var(--main);
   cursor: pointer;
   font-weight: 600;
   line-height: 1;
@@ -30,7 +30,7 @@
   position: absolute;
 }
 .phone:hover {
-  color: var(--blue-soft);
+  color: var(--main-soft);
 }
 .messengers {
   display: flex;

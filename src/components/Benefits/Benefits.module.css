@@ -7,8 +7,6 @@
 .benefits_list {
   padding-top: 16px;
   transition: opacity 0.5s ease-in-out;
-
-  /* color: var(--blue); */
   height: 420px;
   display: flex;
   flex-direction: column;
@@ -32,7 +30,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.1;
-  color: var(--accet-green);
+  color: var(--dark-green);
   /* color: var(--blue); */
 }
 
@@ -46,6 +44,7 @@
 }
 
 .ok_icon {
+  color: blue;
   width: 32px;
 }
 

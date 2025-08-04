@@ -2,10 +2,13 @@
   --blue: #1661a9;
   --blue-soft: #1f7cd6;
   --black: #292929;
+  --dark-green: #006400;
+  --dark-green-soft: #007a00;
+
+  /* 
   --accet-green: #00b068;
   --accet-green-dt: #14c57c;
-  /* 
-    --white: #f0f0f0;
+  --white: #f0f0f0;
   --light-grey: #e4e5e6;
   --hover-grey: #bbb;
   --light-accent: #bcdfd1;
@@ -19,6 +22,8 @@
   --error: #e74a3b; */
 
   --font-family: "Roboto", sans-serif;
+  --main: var(--dark-green);
+  --main-soft: var(--dark-green-soft);
   --second-family: "Impact", sans-serif;
   --third-family: "Montserrat", sans-serif;
 

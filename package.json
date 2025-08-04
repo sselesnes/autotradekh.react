@@ -23,7 +23,6 @@
     "sanitize-html": "^2.17.0",
     "terser": "^5.43.1",
     "use-debounce": "^10.0.4",
-    "vite-plugin-svgr": "^4.3.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -38,6 +37,7 @@
     "globals": "^16.0.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-svgr": "^4.3.0"
   }
 }
