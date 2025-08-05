@@ -32,7 +32,7 @@ export default function Hero({ openModal }: HeroProps) {
   }, []);
 
   return (
-    <section role="banner" aria-labelledby="hero">
+    <section role="hero">
       <h1 className={css.banner_main}>Терміновий викуп авто в Харкові</h1>
       <p className={css.banner_content}>
         Наш сервіс пропонує швидкий і безпечний викуп автомобілів.
