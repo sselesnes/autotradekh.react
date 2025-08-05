@@ -82,7 +82,7 @@ export default function Contact({ closeModal }: ContactProps) {
   return (
     <section id="contact" className={css.formSection}>
       <div className={css.backdrop} onClick={closeModal}>
-        <div className={css.modal}>
+        <div className={css.modal} onClick={e => e.stopPropagation()}>
           <button className={css.closeBtn} onClick={closeModal}>
             ✖
           </button>
