@@ -12,7 +12,11 @@ interface FormMessage {
   status: "success" | "error" | null;
 }
 
-export default function Form() {
+interface ContactProps {
+  closeModal: () => void;
+}
+
+export default function Contact({ closeModal }: ContactProps) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
@@ -50,12 +54,6 @@ export default function Form() {
       return;
     }
 
-    // if (!formData.name || !formData.phone || !formData.message) {
-    //   setFormMessage({ text: "Помилка: Усі поля мають бути заповнені", status: "error" });
-    //   setIsSubmitting(false);
-    //   return;
-    // }
-
     try {
       const response = await fetch("/api/submit.php", {
         method: "POST",
@@ -65,8 +63,6 @@ export default function Form() {
       });
 
       if (!response.ok) {
-        // Якщо відповідь не успішна, спробуємо отримати повідомлення з тіла відповіді.
-        // Якщо парсинг json не вдається, кидаємо власну помилку.
         const errorData = await response.json().catch(() => {
           throw new Error("Помилка: Некоректна відповідь від сервера");
         });
@@ -87,6 +83,9 @@ export default function Form() {
     <section id="contact" className={css.formSection}>
       <div className={css.backdrop}>
         <div className={css.modal}>
+          <button className={css.closeBtn} onClick={closeModal}>
+            ✖
+          </button>
           <h2 className={css.formTitle}>Залишити заявку</h2>
           <form onSubmit={handleSubmit} className={css.form}>
             <input type="hidden" name="csrf_token" value={csrfToken} />
@@ -106,7 +105,6 @@ export default function Form() {
               value={formData.phone}
               onChange={handleInputChange}
               required
-              //   pattern="\+?[0-9\s\-()]{7,15}"
               title="Введіть коректний номер телефону (10 цифр, можливі пробіли, дефіси, дужки)"
               className={css.input}
             />

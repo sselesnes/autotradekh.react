@@ -1,7 +1,7 @@
 .formSection {
   max-width: 500px;
   /* margin: 0 auto; */
-  padding: 16px 24px;
+  /* padding: 16px 24px; */
   /* background-color: cyan; */
 }
 .formTitle {
@@ -79,7 +79,7 @@
   margin: auto 24px;
   /* right: 32px;
   bottom: 24px; */
-  padding: 24px;
+  padding: 16px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -88,4 +88,15 @@
   font-weight: 400;
   text-transform: uppercase;
   /* max-width: 100px; */
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px 8px;
+  border: none;
+  background-color: inherit;
+  font-size: 12px;
+  line-height: 0;
 }

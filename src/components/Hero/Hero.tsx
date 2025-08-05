@@ -5,7 +5,12 @@ import arrow_right from "../../assets/arrow-right.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export default function Hero() {
+// Компонент тепер приймає openModal з батьківського компонента
+type HeroProps = {
+  openModal: () => void;
+};
+
+export default function Hero({ openModal }: HeroProps) {
   useGSAP(() => {
     // Animate arrow_left
     gsap.to(`.${css.arrow_left}`, {
@@ -45,9 +50,10 @@ export default function Hero() {
           Зателефонуйте
         </a>
         <p>або</p>
-        <a className={css.button} href="#contact">
+        {/* Викликаємо openModal, переданий з App */}
+        <button className={css.button} onClick={openModal}>
           залиште заявку
-        </a>
+        </button>
         <img className={css.arrow_right} src={arrow_right} alt="Arrow" />
       </h2>
       <img className={css.car} src={car} alt="car" />

@@ -25,9 +25,16 @@
   font-weight: 400;
   text-transform: uppercase;
   max-width: 140px;
+  display: flex;
 }
 
 .phone {
   /* position: absolute; */
   width: 24px; /* svg 11x13 */
+}
+
+.phoneBtn {
+  padding: 0;
+  border: none;
+  background-color: inherit;
 }
