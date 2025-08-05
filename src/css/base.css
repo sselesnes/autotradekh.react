@@ -22,8 +22,8 @@
   --error: #e74a3b; */
 
   --font-family: "Roboto", sans-serif;
-  --main: var(--dark-green);
-  --main-soft: var(--dark-green-soft);
+  --main: var(--blue);
+  --main-soft: var(--blue-soft);
   --second-family: "Impact", sans-serif;
   --third-family: "Montserrat", sans-serif;
 

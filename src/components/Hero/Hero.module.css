@@ -20,10 +20,6 @@
   position: relative;
   /* display: inline-block;*/
 }
-.banner_sub p {
-  color: var(--main);
-  padding: 32px;
-}
 .arrow_left,
 .arrow_right {
   position: absolute;
@@ -39,7 +35,7 @@
 
 .banner_content {
   padding: 24px 0;
-  text-align: center;
+  text-align: justify;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.1;
@@ -52,7 +48,7 @@
 }
 
 .button {
-  padding: 12px 24px;
+  padding: 8px 16px;
   background-color: var(--main);
   color: white;
   border: none;
@@ -70,7 +66,10 @@
   background-color: #cccccc;
   cursor: not-allowed;
 }
-
+.banner_sub p {
+  color: var(--main);
+  padding: 24px;
+}
 @media only screen and (min-width: 768px) {
   .banner {
     font-size: 3rem;
