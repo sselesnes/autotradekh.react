@@ -6,7 +6,7 @@ import autotradekhLogo from "../../assets/autotradekh-logo2.webp";
 
 export default function Footer() {
   return (
-    <header className={css.container}>
+    <footer className={css.container}>
       <div className={css.phone}>
         <a href="tel:+380956196756">095 619 67 56</a>
       </div>
@@ -31,6 +31,6 @@ export default function Footer() {
       <div className={css.autotradekh_logo_wrapper}>
         <img className={css.autotradekh_logo} src={autotradekhLogo} alt="Autotradekh logo" />
       </div>
-    </header>
+    </footer>
   );
 }

@@ -12,7 +12,7 @@ export default function App() {
   // Єдиний стан для модального вікна
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showModalBtn, setShowModalBtn] = useState(true);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const ntersectionRef = useRef<HTMLDivElement>(null);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -23,16 +23,16 @@ export default function App() {
         // Ховаємо кнопку, якщо Footer у в'юпорті АБО модальне вікно відкрите
         setShowModalBtn(!entry.isIntersecting && !isModalOpen);
       },
-      { threshold: 0.1 }
+      { threshold: 1 }
     );
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
+    if (ntersectionRef.current) {
+      observer.observe(ntersectionRef.current);
     }
 
     return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
+      if (ntersectionRef.current) {
+        observer.unobserve(ntersectionRef.current);
       }
     };
   }, [isModalOpen]); // Додаємо isModalOpen до залежностей, щоб оновлювати observer
@@ -43,10 +43,8 @@ export default function App() {
       <Hero openModal={openModal} />
       <Benefits />
       {showModalBtn && <ContactModalBtn openModal={openModal} />}
-      <div ref={contactRef}>
-        <Footer />
-      </div>
-      {isModalOpen && <Contact closeModal={closeModal} />}
+      <Footer />
+      <div ref={ntersectionRef}>{isModalOpen && <Contact closeModal={closeModal} />}</div>
     </div>
   );
 }
