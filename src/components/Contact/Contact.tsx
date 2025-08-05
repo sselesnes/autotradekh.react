@@ -85,45 +85,49 @@ export default function Form() {
 
   return (
     <section id="contact" className={css.formSection}>
-      <h2 className={css.formTitle}>Залишити заявку</h2>
-      <form onSubmit={handleSubmit} className={css.form}>
-        <input type="hidden" name="csrf_token" value={csrfToken} />
-        <input
-          type="text"
-          name="name"
-          placeholder="Ваше ім'я"
-          value={formData.name}
-          onChange={handleInputChange}
-          required
-          className={css.input}
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Номер телефону"
-          value={formData.phone}
-          onChange={handleInputChange}
-          required
-          //   pattern="\+?[0-9\s\-()]{7,15}"
-          title="Введіть коректний номер телефону (10 цифр, можливі пробіли, дефіси, дужки)"
-          className={css.input}
-        />
-        <textarea
-          name="message"
-          placeholder="Марка, модель, стан авто"
-          value={formData.message}
-          onChange={handleInputChange}
-          className={css.textarea}
-        />
-        <button type="submit" disabled={isSubmitting} className={css.submitButton}>
-          {isSubmitting ? "Відправка..." : "Відправити заявку"}
-        </button>
-      </form>
-      {formMessage.text && (
-        <div className={`${css.message} ${css[formMessage.status || ""]}`}>
-          {formMessage.text}
+      <div className={css.backdrop}>
+        <div className={css.modal}>
+          <h2 className={css.formTitle}>Залишити заявку</h2>
+          <form onSubmit={handleSubmit} className={css.form}>
+            <input type="hidden" name="csrf_token" value={csrfToken} />
+            <input
+              type="text"
+              name="name"
+              placeholder="Ваше ім'я"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+              className={css.input}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Номер телефону"
+              value={formData.phone}
+              onChange={handleInputChange}
+              required
+              //   pattern="\+?[0-9\s\-()]{7,15}"
+              title="Введіть коректний номер телефону (10 цифр, можливі пробіли, дефіси, дужки)"
+              className={css.input}
+            />
+            <textarea
+              name="message"
+              placeholder="Марка, модель, стан авто"
+              value={formData.message}
+              onChange={handleInputChange}
+              className={css.textarea}
+            />
+            <button type="submit" disabled={isSubmitting} className={css.submitButton}>
+              {isSubmitting ? "Відправка..." : "Відправити заявку"}
+            </button>
+          </form>
+          {formMessage.text && (
+            <div className={`${css.message} ${css[formMessage.status || ""]}`}>
+              {formMessage.text}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </section>
   );
 }

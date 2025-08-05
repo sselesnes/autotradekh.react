@@ -41,9 +41,9 @@ export default function App() {
       <Benefits />
       {showModalBtn && <ContactModalBtn />}
       <div ref={contactRef}>
-        <Contact />
+        <Footer />
       </div>
-      <Footer />
+      {/* <Contact /> */}
     </div>
   );
 }
