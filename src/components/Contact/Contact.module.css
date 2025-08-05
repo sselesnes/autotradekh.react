@@ -79,7 +79,7 @@
   margin: auto 24px;
   /* right: 32px;
   bottom: 24px; */
-  padding: 16px;
+  padding: 24px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -92,10 +92,12 @@
 
 .closeBtn {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 12px 8px;
+  top: 4px;
+  right: 4px;
+  padding: 10px 5px;
   border: none;
+  /* border: solid 1px grey;
+  border-radius: 50%; */
   background-color: inherit;
   font-size: 12px;
   line-height: 0;
