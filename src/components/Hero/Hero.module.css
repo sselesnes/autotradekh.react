@@ -25,10 +25,12 @@
   position: absolute;
   width: 40px;
   top: 10%;
+  bottom: auto;
   left: -3px;
 }
 .arrow_right {
-  top: 80%;
+  top: auto;
+  bottom: 0;
   left: 90%;
   transform: scaleX(-1);
 }
@@ -68,7 +70,7 @@
 }
 .banner_sub p {
   color: var(--main);
-  padding: 24px;
+  padding: 24px 0 16px;
 }
 @media only screen and (min-width: 768px) {
   .banner {
