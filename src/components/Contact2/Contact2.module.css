@@ -29,7 +29,14 @@
   font-weight: 500;
   cursor: pointer;
   text-transform: uppercase;
+  position: relative;
 }
 .button:hover {
   background-color: var(--main-soft);
+}
+.arrow_left {
+  position: absolute;
+  width: 40px;
+  bottom: 0;
+  left: -52px;
 }
