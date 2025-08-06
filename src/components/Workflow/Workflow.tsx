@@ -1,12 +1,12 @@
 import css from "./Workflow.module.css";
 
 // Імпортуємо зображення
-import w1 from "../../assets/w1.png";
-import w2 from "../../assets/w2.png";
-import w3 from "../../assets/w3.png";
-import w4 from "../../assets/w4.png";
-import w5 from "../../assets/w5.png";
-import w6 from "../../assets/w6.png";
+import w1 from "../../assets/w1.webp";
+import w2 from "../../assets/w2.webp";
+import w3 from "../../assets/w3.webp";
+import w4 from "../../assets/w4.webp";
+import w5 from "../../assets/w5.webp";
+import w6 from "../../assets/w6.webp";
 
 const workflowList = [
   {
@@ -28,7 +28,7 @@ const workflowList = [
     image: w2,
   },
   {
-    title: "Узгодження умов угоди",
+    title: "Узгодження угоди",
     describe:
       "Ми обговорюємо з вами остаточну ціну та деталі угоди, щоб все було прозоро та зрозуміло",
     image: w5,
@@ -40,7 +40,7 @@ const workflowList = [
     image: w4,
   },
   {
-    title: "Отримайте свої кошти",
+    title: "Отримайте ваші кошти",
     describe:
       "Після підписання документів ви одразу отримуєте гроші зручним для Вас способом – готівкою чи на картку",
     image: w6,
