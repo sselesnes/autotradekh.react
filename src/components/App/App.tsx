@@ -5,6 +5,8 @@ import Benefits from "../Benefits/Benefits";
 import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
 import Footer from "../Footer/Footer";
 import Contact from "../Contact/Contact";
+import Contact2 from "../Contact2/Contact2";
+import Workflow from "../Workflow/Workflow";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -12,7 +14,7 @@ export default function App() {
   // Єдиний стан для модального вікна
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showModalBtn, setShowModalBtn] = useState(true);
-  const ntersectionRef = useRef<HTMLDivElement>(null);
+  const intersectionRef = useRef<HTMLDivElement>(null);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -26,13 +28,13 @@ export default function App() {
       { threshold: 1 }
     );
 
-    if (ntersectionRef.current) {
-      observer.observe(ntersectionRef.current);
+    if (intersectionRef.current) {
+      observer.observe(intersectionRef.current);
     }
 
     return () => {
-      if (ntersectionRef.current) {
-        observer.unobserve(ntersectionRef.current);
+      if (intersectionRef.current) {
+        observer.unobserve(intersectionRef.current);
       }
     };
   }, [isModalOpen]); // Додаємо isModalOpen до залежностей, щоб оновлювати observer
@@ -42,9 +44,13 @@ export default function App() {
       <Header />
       <Hero openModal={openModal} />
       <Benefits />
-      {showModalBtn && <ContactModalBtn openModal={openModal} />}
+      <Workflow />
+      <div ref={intersectionRef}>
+        {isModalOpen && <Contact closeModal={closeModal} />}
+        <Contact2 openModal={openModal} />
+      </div>
       <Footer />
-      <div ref={ntersectionRef}>{isModalOpen && <Contact closeModal={closeModal} />}</div>
+      {showModalBtn && <ContactModalBtn openModal={openModal} />}
     </div>
   );
 }

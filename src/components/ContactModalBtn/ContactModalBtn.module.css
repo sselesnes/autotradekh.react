@@ -12,7 +12,7 @@
 }
 
 .modalBtn {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   right: 32px;
   bottom: 24px;

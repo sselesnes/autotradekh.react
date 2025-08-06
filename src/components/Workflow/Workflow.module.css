@@ -1,0 +1,83 @@
+.sectionTitle {
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--main);
+}
+
+.list {
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.item {
+  position: relative;
+  width: 158px;
+  height: 158px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  bottom: 4%;
+  left: 0;
+  position: absolute;
+  text-shadow: 1px 1px 4px #000;
+  text-transform: uppercase;
+  color: white;
+  opacity: 1; /* Початкова прозорість для плавного зникнення */
+  transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+}
+
+.item:hover .title {
+  opacity: 0; /* При наведенні робимо елемент прозорим */
+}
+
+.describe {
+  transform: translateY(50%);
+  bottom: 50%;
+  left: 0;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px #000;
+  color: white;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  opacity: 0; /* Початкова прозорість для плавного появи */
+  transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+}
+
+.item:hover .describe {
+  opacity: 1; /* При наведенні робимо елемент видимим */
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Початкова прозорість для плавного затемнення */
+  transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+}
+
+.item:hover::before {
+  opacity: 0.5; /* При наведенні курсору затемнення на 50% */
+}

@@ -1,8 +1,18 @@
 .benefits_title {
   padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--main);
+
+  /* padding-top: 24px;
   font-size: 1.3rem;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.3; */
 }
 .benefits_list {
   /* padding-top: 8px; */
@@ -38,7 +48,7 @@
 .describe {
   padding-top: 4px;
   text-align: justify;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.1;
   color: var(--black);
