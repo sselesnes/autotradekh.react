@@ -54,19 +54,15 @@
   display: block;
   /* transform: scaleX(-1); */
 }
-.hand_key,
-.hand_money {
+.hand_key {
   position: absolute;
   width: 160px;
   top: -20px;
-  /* bottom: -100px; */
   left: 0px;
-  /* top: -100px; */
 }
 .hand_money {
+  position: absolute;
   width: 190px;
-  top: auto;
-  left: auto;
   bottom: -40px;
   right: 0px;
 }
