@@ -2,6 +2,8 @@ import css from "./Contact.module.css";
 
 import { useState, useEffect } from "react";
 
+import type { ModalProps } from "../../types/types.ts";
+
 interface FormData {
   name: string;
   phone: string;
@@ -12,12 +14,6 @@ interface FormMessage {
   text: string;
   status: "success" | "error" | null;
 }
-
-// interface ContactProps {
-//   closeModal: () => void;
-// }
-
-import type { ModalProps } from "../../types/types.ts";
 
 export default function Contact({ closeModal }: ModalProps) {
   const [formData, setFormData] = useState<FormData>({

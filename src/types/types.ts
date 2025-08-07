@@ -1,4 +1,4 @@
 export type ModalProps = {
-  openModal: () => void;
-  closeModal: () => void;
+  openModal?: () => void;
+  closeModal?: () => void;
 };

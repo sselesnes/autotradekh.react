@@ -8,6 +8,8 @@ import Contact from "../Contact/Contact";
 import Contact2 from "../Contact2/Contact2";
 import Workflow from "../Workflow/Workflow";
 
+// import type { ModalProps } from "../../types/types.ts";
+
 import { useState, useEffect, useRef } from "react";
 
 export default function App() {
@@ -20,24 +22,29 @@ export default function App() {
   const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
+    // 1. Capture the current ref value in a constant.
+    const currentRef = intersectionRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Ховаємо кнопку, якщо Footer у в'юпорті АБО модальне вікно відкрите
+        // Your logic remains the same
         setShowModalBtn(!entry.isIntersecting && !isModalOpen);
       },
       { threshold: 1 }
     );
 
-    if (intersectionRef.current) {
-      observer.observe(intersectionRef.current);
+    // 2. Use the captured value for observing.
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
+    // 3. Use the captured value in the cleanup function.
     return () => {
-      if (intersectionRef.current) {
-        observer.unobserve(intersectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, [isModalOpen]); // Додаємо isModalOpen до залежностей, щоб оновлювати observer
+  }, [isModalOpen]);
 
   return (
     <div className={css.container}>
