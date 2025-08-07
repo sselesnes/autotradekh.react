@@ -64,9 +64,10 @@
   /* top: -100px; */
 }
 .hand_money {
+  width: 190px;
   top: auto;
   left: auto;
-  bottom: -20px;
+  bottom: -40px;
   right: 0px;
 }
 
