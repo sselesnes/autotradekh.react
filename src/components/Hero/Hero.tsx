@@ -7,12 +7,9 @@ import arrow_right from "../../assets/arrow-right.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-// Компонент тепер приймає openModal з батьківського компонента
-type HeroProps = {
-  openModal: () => void;
-};
+import type { ModalProps } from "../../types/types.ts";
 
-export default function Hero({ openModal }: HeroProps) {
+export default function Hero({ openModal }: ModalProps) {
   useGSAP(() => {
     // Animate arrow_left
     gsap.to(`.${css.arrow_left}`, {

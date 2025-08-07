@@ -4,9 +4,7 @@ import arrow_right from "../../assets/arrow-right.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-type ModalProps = {
-  openModal: () => void;
-};
+import type { ModalProps } from "../../types/types.ts";
 
 export default function Contact2({ openModal }: ModalProps) {
   useGSAP(() => {

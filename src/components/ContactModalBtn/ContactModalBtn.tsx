@@ -1,15 +1,14 @@
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import css from "./ContactModalBtn.module.css";
 import phone from "../../assets/phone.svg";
 
-// Компонент більше не рендерить Contact і не має свого стану
-type ContactModalBtnProps = {
-  openModal: () => void;
-};
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-export default function ContactModalBtn({ openModal }: ContactModalBtnProps) {
+import type { ModalProps } from "../../types/types.ts";
+
+export default function ContactModalBtn({ openModal }: ModalProps) {
+  // export default function ContactModalBtn({ openModal }: ContactModalBtnProps) {
   const phoneRef = useRef(null);
 
   useGSAP(() => {

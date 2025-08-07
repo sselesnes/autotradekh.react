@@ -1,4 +1,4 @@
-export type Benefit = {
-  title: string;
-  describe: string;
+export type ModalProps = {
+  openModal: () => void;
+  closeModal: () => void;
 };
