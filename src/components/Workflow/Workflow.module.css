@@ -11,17 +11,19 @@
 }
 
 .list {
+  /* padding-top: 48px; */
   padding-top: 24px;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  column-gap: 4px;
+  row-gap: 4px;
 }
 
 .item {
   position: relative;
   width: 158px;
   height: 158px;
-  overflow: hidden;
+  /* overflow: hidden; */
   cursor: pointer;
 }
 
@@ -31,7 +33,7 @@
 }
 
 .title {
-  bottom: 4%;
+  top: 8px;
   left: 0;
   position: absolute;
   text-shadow: 1px 1px 4px #000;
