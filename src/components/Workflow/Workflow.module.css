@@ -33,7 +33,7 @@
 }
 
 .title {
-  top: 8px;
+  bottom: 8px;
   left: 0;
   position: absolute;
   text-shadow: 1px 1px 4px #000;
