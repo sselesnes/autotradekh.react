@@ -43,9 +43,31 @@
   color: var(--black);
   white-space: pre-wrap;
 }
+.car_container {
+  padding: 64px 0;
+  position: relative;
+  display: inline-block;
+}
+
 .car {
-  padding-top: 32px;
   width: 100%;
+  display: block;
+  /* transform: scaleX(-1); */
+}
+.hand_key,
+.hand_money {
+  position: absolute;
+  width: 160px;
+  top: -20px;
+  /* bottom: -100px; */
+  left: 0px;
+  /* top: -100px; */
+}
+.hand_money {
+  top: auto;
+  left: auto;
+  bottom: -20px;
+  right: 0px;
 }
 
 .button {

@@ -1,5 +1,7 @@
 import css from "./Hero.module.css";
 import car from "../../assets/alfa-romeo-147-shadow.webp";
+import handKey from "../../assets/firefly-hand-key.webp";
+import handMoney from "../../assets/firefly-hand-money.webp";
 import arrow_right from "../../assets/arrow-right.svg";
 
 import { useGSAP } from "@gsap/react";
@@ -56,7 +58,11 @@ export default function Hero({ openModal }: HeroProps) {
         </button>
         <img className={css.arrow_right} src={arrow_right} alt="Arrow" />
       </h2>
-      <img className={css.car} src={car} alt="car" />
+      <div className={css.car_container}>
+        <img className={css.car} src={car} alt="car" />
+        <img className={css.hand_key} src={handKey} alt="hand with car key" />
+        <img className={css.hand_money} src={handMoney} alt="hand with money" />
+      </div>
     </section>
   );
 }
