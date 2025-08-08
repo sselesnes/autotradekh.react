@@ -48,6 +48,8 @@
 
 @media only screen and (min-width: 768px) {
   .container {
+    /* align-items: center; */
+    height: auto;
     justify-content: space-between;
   }
   .autotradekh_logo_wrapper,
@@ -55,7 +57,23 @@
   .messengers {
     position: static;
   }
+
   .phone {
-    padding: 0;
+    padding: 9px 0;
+    align-self: auto;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  .messengers {
+    gap: 16px;
+    padding: 6px 0;
+  }
+  .autotradekh_logo {
+    height: 48px;
+  }
+  .tiktok,
+  .telegram,
+  .viber {
+    width: 26px;
   }
 }
