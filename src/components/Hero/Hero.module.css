@@ -9,6 +9,15 @@
   text-transform: uppercase;
   color: var(--main);
 }
+.banner_content {
+  padding: 24px 0;
+  text-align: justify;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--black);
+  white-space: pre-wrap;
+}
 .banner_sub {
   padding-top: 24px;
   text-align: center;
@@ -34,15 +43,6 @@
   transform: scaleX(-1);
 }
 
-.banner_content {
-  padding: 24px 0;
-  text-align: justify;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--black);
-  white-space: pre-wrap;
-}
 .car_container {
   padding: 64px 0;
   position: relative;
@@ -91,12 +91,45 @@
   padding: 24px 0 16px;
 }
 @media only screen and (min-width: 768px) {
-  .banner {
-    font-size: 3rem;
+  .banner_main {
+    padding-top: 32px;
+    font-size: 4rem;
+  }
+  .banner_content {
+    font-size: 1.5rem;
+    padding: 32px 66px;
+    text-align: center;
+  }
+  .banner_sub {
+    padding-top: 32px;
+    font-size: 2.5rem;
+  }
+  .banner_sub p {
+  }
+  .button {
+    font-size: 2.2rem;
+  }
+  .arrow_left,
+  .arrow_right {
+    width: 64px;
+    left: 16%;
+  }
+  .arrow_right {
+    bottom: -2%;
+    left: 75.7%;
+  }
+
+  .car_container {
+    padding: 32px 0;
+  }
+  .hand_key {
+    left: -32px;
+    top: 10px;
+  }
+  .hand_money {
+    bottom: -20px;
+    right: -32px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .banner {
-    font-size: 5rem;
-  }
 }
