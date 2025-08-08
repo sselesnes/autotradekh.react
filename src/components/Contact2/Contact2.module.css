@@ -41,3 +41,16 @@
   bottom: 0;
   left: -52px;
 }
+
+@media only screen and (min-width: 768px) {
+  .banner_main {
+    padding-top: 32px;
+    font-size: 2.5rem;
+  }
+  .banner_content {
+    font-size: 1.5rem;
+  }
+  .button {
+    font-size: 2.2rem;
+  }
+}

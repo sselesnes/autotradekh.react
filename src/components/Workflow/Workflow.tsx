@@ -52,7 +52,7 @@ export default function Workflow() {
     <section role="region" aria-labelledby="workflow-title">
       {" "}
       {/* Змінено роль для кращої семантики */}
-      <h2 id="workflow-title" className={css.sectionTitle}>
+      <h2 id="workflow-title" className={css.workflow_title}>
         Як це працює?
       </h2>{" "}
       {/* Додано заголовок для aria-labelledby */}
