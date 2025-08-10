@@ -101,7 +101,7 @@ export default function Benefits() {
     <section role="benefits" className={css.benefits}>
       <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
       {benefits.length > 0 && (
-        <Accordion>
+        <Accordion transition transitionTimeout={250}>
           <ul className={`${css.benefits_list} `}>
             {benefits.map((benefit, index) => (
               <li key={index} className={css.benefit_item}>
