@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
 import { Accordion, AccordionItem } from "@szhsin/react-accordion";
 
 import css from "./Benefits.module.css";

@@ -10,11 +10,11 @@
   color: var(--main);
 }
 :global(.szh-accordion__item-btn) {
-  background-color: transparent !important; /* Робимо фон прозорим */
-  border: none !important; /* Прибираємо рамку */
-  padding: 0 !important; /* Скидаємо внутрішні відступи, якщо вони є */
-  width: 100%; /* Розтягуємо на всю ширину, щоб клік працював скрізь */
-  text-align: left; /* Вирівнюємо контент по лівому краю (за замовчуванням може бути по центру) */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
 }
 
 .benefits_list {
@@ -28,7 +28,8 @@
 }
 .benefit_item {
   display: flex;
-  padding-top: 24px;
+  padding: 24px 0 12px;
+  border-bottom: 1px solid var(--blue-soft);
 }
 
 .benefit_title {
