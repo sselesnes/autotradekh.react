@@ -9,14 +9,25 @@
   text-transform: uppercase;
   color: var(--main);
 }
+:global(.szh-accordion__item-btn) {
+  background-color: transparent !important; /* Робимо фон прозорим */
+  border: none !important; /* Прибираємо рамку */
+  padding: 0 !important; /* Скидаємо внутрішні відступи, якщо вони є */
+  width: 100%; /* Розтягуємо на всю ширину, щоб клік працював скрізь */
+  text-align: left; /* Вирівнюємо контент по лівому краю (за замовчуванням може бути по центру) */
+}
+
 .benefits_list {
   transition: opacity 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
+.ok_icon {
+  width: 32px;
+}
 .benefit_item {
+  display: flex;
   padding-top: 24px;
 }
 
@@ -30,7 +41,7 @@
 .main {
   text-align: left;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   color: var(--main);
 }
@@ -44,22 +55,18 @@
   color: var(--black);
 }
 
-.ok_icon {
-  width: 32px;
-}
-
-.fading_out {
+/* .fading_out {
   opacity: 0;
 }
 
 .fading_in {
   opacity: 1;
-}
+} */
 
 @media only screen and (min-width: 768px) {
   .benefits_title {
     padding-top: 32px;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
   }
   .main {
     font-size: 1.5rem;

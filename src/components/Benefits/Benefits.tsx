@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { Accordion, AccordionItem } from "@szhsin/react-accordion";
+
 import css from "./Benefits.module.css";
 import svg_ok from "../../assets/ok.svg";
 
@@ -90,60 +92,53 @@ const benefits = [
   },
 ];
 
-const getRandomBenefits = () => {
-  return [...benefits].sort(() => Math.random() - 0.5).slice(0, 4);
-};
+// const getRandomBenefits = () => {
+//   return [...benefits].sort(() => Math.random() - 0.5).slice(0, 4);
+// };
 
 export default function Benefits() {
-  const [currentBenefits, setCurrentBenefits] = useState(getRandomBenefits);
-  const [isFadingOut, setIsFadingOut] = useState(false);
-  const intervalRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    intervalRef.current = window.setInterval(() => {
-      // Зберігаємо відстань від низу сторінки
-      // const distanceFromBottom =
-      //   document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
-
-      // Спочатку запускаємо зникнення
-      setIsFadingOut(true);
-
-      // Замінюємо бенефіти після завершення анімації зникнення
-      setTimeout(() => {
-        setCurrentBenefits(getRandomBenefits());
-        // Вимикаємо анімацію зникнення, щоб нові бенефіти з’явилися
-        setIsFadingOut(false);
-
-        // Відновлюємо позицію прокрутки, зберігаючи відстань від низу
-        // const newScrollHeight = document.documentElement.scrollHeight;
-        // const newScrollY = newScrollHeight - (window.innerHeight + distanceFromBottom);
-        // window.scrollTo(0, newScrollY);
-      }, 333); // Час має відповідати тривалості CSS-анімації
-    }, 10000); // Інтервал між повними циклами
-
-    return () => {
-      if (intervalRef.current !== null) {
-        window.clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
-
   return (
     <section role="benefits" className={css.benefits}>
       <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
-      {currentBenefits.length > 0 && (
-        <ul className={`${css.benefits_list} ${isFadingOut ? css.fading_out : css.fading_in}`}>
-          {currentBenefits.map(benefit => (
-            <li key={benefit.title} className={css.benefit_item}>
-              <div className={css.benefit_title}>
-                <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
-                <h2 className={css.main}>{benefit.title}</h2>
-              </div>
-              <p className={css.describe}>{benefit.describe}</p>
-            </li>
-          ))}
-        </ul>
+      {benefits.length > 0 && (
+        <Accordion>
+          <ul className={`${css.benefits_list} `}>
+            {benefits.map((benefit, index) => (
+              <li key={index} className={css.benefit_item}>
+                <AccordionItem
+                  header={
+                    <div className={css.benefit_title}>
+                      <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
+                      <h2 className={css.main}>{benefit.title}</h2>
+                    </div>
+                  }
+                >
+                  <p className={css.describe}>{benefit.describe}</p>
+                </AccordionItem>
+              </li>
+            ))}
+          </ul>
+        </Accordion>
       )}
     </section>
   );
+
+  // return (
+  //   <section role="benefits" className={css.benefits}>
+  //     <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
+  //     {benefits.length > 0 && (
+  //       <ul className={`${css.benefits_list} ${isFadingOut ? css.fading_out : css.fading_in}`}>
+  //         {benefits.map(benefit => (
+  //           <li key={benefit.title} className={css.benefit_item}>
+  // <div className={css.benefit_title}>
+  //   <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
+  //   <h2 className={css.main}>{benefit.title}</h2>
+  // </div>
+  // <p className={css.describe}>{benefit.describe}</p>
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     )}
+  //   </section>
+  // );
 }
