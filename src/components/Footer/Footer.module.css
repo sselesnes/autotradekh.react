@@ -70,3 +70,14 @@
     display: block;
   }
 }
+@media only screen and (min-width: 1024px) {
+  .messengers {
+    gap: 164px;
+  }
+  .messengers a {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+}

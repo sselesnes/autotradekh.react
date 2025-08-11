@@ -50,18 +50,17 @@ const workflowList = [
 export default function Workflow() {
   return (
     <section role="region" aria-labelledby="workflow-title">
-      {" "}
-      {/* Змінено роль для кращої семантики */}
       <h2 id="workflow-title" className={css.workflow_title}>
         Як це працює?
-      </h2>{" "}
-      {/* Додано заголовок для aria-labelledby */}
+      </h2>
       <ul className={css.list}>
-        {workflowList.map(workflow => (
-          <li className={css.item} key={workflow.title}>
-            <h3 className={css.title}>{workflow.title}</h3> {/* Змінено на h3 для ієрархії */}
+        {workflowList.map((workflow, index) => (
+          <li className={css.item} key={index}>
             <img className={css.image} src={workflow.image} alt={`Крок: ${workflow.title}`} />
-            <p className={css.describe}>{workflow.describe}</p>
+            <div className={css.text_block}>
+              <h3 className={css.title}>{workflow.title}</h3>
+              <p className={css.describe}>{workflow.describe}</p>
+            </div>
           </li>
         ))}
       </ul>

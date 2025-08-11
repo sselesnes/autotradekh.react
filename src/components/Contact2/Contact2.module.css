@@ -54,4 +54,9 @@
   .button {
     font-size: 2.2rem;
   }
+  .arrow_left {
+    width: 64px;
+    bottom: -8%;
+    left: -20%;
+  }
 }

@@ -34,12 +34,12 @@
   width: 40px;
   top: 10%;
   bottom: auto;
-  left: -3px;
+  left: -7%;
 }
 .arrow_right {
   top: auto;
   bottom: 0;
-  left: 90%;
+  left: 93%;
   transform: scaleX(-1);
 }
 
@@ -90,10 +90,26 @@
   color: var(--main);
   padding: 24px 0 16px;
 }
+@media only screen and (min-width: 360px) {
+  .arrow_left,
+  .arrow_right {
+    position: absolute;
+    width: 40px;
+    top: 10%;
+    bottom: auto;
+    left: -2%;
+  }
+  .arrow_right {
+    top: auto;
+    bottom: 0;
+    left: 90%;
+    transform: scaleX(-1);
+  }
+}
 @media only screen and (min-width: 768px) {
   .banner_main {
-    padding-top: 32px;
-    font-size: 4rem;
+    padding-top: 24px;
+    font-size: 3.5rem;
   }
   .banner_content {
     font-size: 1.5rem;
@@ -101,26 +117,29 @@
     text-align: center;
   }
   .banner_sub {
-    padding-top: 32px;
+    padding-top: 24px;
     font-size: 2.5rem;
   }
   .banner_sub p {
+    font-size: 2rem;
   }
   .button {
     font-size: 2.2rem;
   }
   .arrow_left,
   .arrow_right {
+    top: 6%;
     width: 64px;
     left: 16%;
   }
   .arrow_right {
+    top: auto;
     bottom: -2%;
     left: 75.7%;
   }
 
   .car_container {
-    padding: 32px 0;
+    padding: 16px 0;
   }
   .hand_key {
     left: -32px;
@@ -131,5 +150,18 @@
     right: -32px;
   }
 }
+@media only screen and (min-width: 1024px) {
+}
 @media only screen and (min-width: 1280px) {
+  .arrow_left,
+  .arrow_right {
+    top: 6%;
+    width: 64px;
+    left: 30.2%;
+  }
+  .arrow_right {
+    top: auto;
+    bottom: -2%;
+    left: 65%;
+  }
 }

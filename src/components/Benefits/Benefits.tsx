@@ -92,10 +92,6 @@ const benefits = [
   },
 ];
 
-// const getRandomBenefits = () => {
-//   return [...benefits].sort(() => Math.random() - 0.5).slice(0, 4);
-// };
-
 export default function Benefits() {
   return (
     <section role="benefits" className={css.benefits}>
@@ -122,23 +118,4 @@ export default function Benefits() {
       )}
     </section>
   );
-
-  // return (
-  //   <section role="benefits" className={css.benefits}>
-  //     <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
-  //     {benefits.length > 0 && (
-  //       <ul className={`${css.benefits_list} ${isFadingOut ? css.fading_out : css.fading_in}`}>
-  //         {benefits.map(benefit => (
-  //           <li key={benefit.title} className={css.benefit_item}>
-  // <div className={css.benefit_title}>
-  //   <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
-  //   <h2 className={css.main}>{benefit.title}</h2>
-  // </div>
-  // <p className={css.describe}>{benefit.describe}</p>
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     )}
-  //   </section>
-  // );
 }
