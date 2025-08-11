@@ -164,4 +164,11 @@
     bottom: -2%;
     left: 65%;
   }
+
+  .hand_key {
+    width: 240px;
+  }
+  .hand_money {
+    width: 240px;
+  }
 }
