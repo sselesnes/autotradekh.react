@@ -23,7 +23,6 @@
   font-weight: 600;
   line-height: 1;
   align-self: center;
-  /* position: absolute; */
 }
 .phone:hover {
   color: var(--main-soft);
@@ -39,4 +38,34 @@
 .telegram,
 .viber {
   width: 28px;
+}
+.messengers p {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    justify-content: space-around;
+  }
+  .phone {
+    font-size: 32px;
+  }
+  .tiktok,
+  .telegram,
+  .viber {
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+  }
+  .messengers {
+    gap: 128px;
+  }
+  .messengers a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .messengers p {
+    display: block;
+  }
 }

@@ -22,9 +22,7 @@
 
 .item {
   position: relative;
-  width: 158px;
-  height: 158px;
-  /* overflow: hidden; */
+  max-width: 8.6rem;
   cursor: pointer;
 }
 
@@ -85,6 +83,11 @@
   opacity: 0.5; /* При наведенні курсору затемнення на 50% */
 }
 
+@media only screen and (min-width: 360px) {
+  .item {
+    max-width: 9.8rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   .workflow_title {
     padding-top: 32px;
@@ -96,8 +99,7 @@
     row-gap: 6px;
   }
   .item {
-    width: 230px;
-    height: 230px;
+    max-width: 14.4rem;
   }
   .title {
     font-size: 1.7rem;

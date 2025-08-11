@@ -20,11 +20,13 @@ export default function Footer() {
         <div className={css.telegram}>
           <a href="https://t.me/+380956196756" target="_blank">
             <img src={telegramLogo} alt="telegram" />
+            <p>Telegram</p>
           </a>
         </div>
         <div className={css.viber}>
           <a href="viber://chat?number=%2B380956196756">
             <img src={viberLogo} alt="viber" />
+            <p>Viber</p>
           </a>
         </div>
       </div>
