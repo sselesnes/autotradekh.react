@@ -27,6 +27,7 @@
 }
 
 .image {
+  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -61,6 +62,7 @@
   text-align: center;
   opacity: 0; /* Початкова прозорість для плавного появи */
   transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+  padding: 8px;
 }
 
 .item:hover .describe {
@@ -77,6 +79,7 @@
   background-color: black;
   opacity: 0; /* Початкова прозорість для плавного затемнення */
   transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+  border-radius: 8px;
 }
 
 .item:hover::before {
