@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "target": "es5",
+    "target": "es2015",
     "module": "esnext",
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2015"]
+    "lib": ["dom", "esnext"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

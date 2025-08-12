@@ -1,10 +1,19 @@
 import { defineConfig } from "vite";
 // import react from "@vitejs/plugin-react-swc";
 import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
+// import svgr from "vite-plugin-svgr";
+import legacy from "@vitejs/plugin-legacy";
 
 export default defineConfig({
-  plugins: [react(), svgr()],
+  plugins: [
+    react(),
+    legacy({
+      targets: ["safari >= 13", "ios >= 13"], // Для Safari 13
+      modernPolyfills: true, // Polyfills для сучасного бандлу
+      additionalLegacyPolyfills: ["regenerator-runtime/runtime"], // Для async/await
+      renderLegacyChunks: true, // Генерувати legacy-бандли
+    }),
+  ],
   server: {
     proxy: {
       "/api": {
@@ -19,6 +28,7 @@ export default defineConfig({
     },
   },
   build: {
+    target: "es5",
     minify: "terser",
     terserOptions: {
       compress: {
