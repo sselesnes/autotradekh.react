@@ -58,13 +58,13 @@
   position: absolute;
   width: 160px;
   top: -20px;
-  left: 0px;
+  left: -7%;
 }
 .hand_money {
   position: absolute;
   width: 190px;
   bottom: -40px;
-  right: 0px;
+  right: -8%;
 }
 
 .button {
