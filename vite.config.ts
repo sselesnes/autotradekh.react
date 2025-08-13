@@ -14,19 +14,19 @@ export default defineConfig({
       renderLegacyChunks: true, // Генерувати legacy-бандли
     }),
   ],
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://temp.sselesnes.site/", // Adjust to your PHP server (e.g., Apache/Nginx)
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ""),
-      },
-      "/submit.php": {
-        target: "https://temp.sselesnes.site/",
-        changeOrigin: true,
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     "/api": {
+  //       target: "https://temp.sselesnes.site/", // Adjust to your PHP server (e.g., Apache/Nginx)
+  //       changeOrigin: true,
+  //       rewrite: path => path.replace(/^\/api/, ""),
+  //     },
+  //     "/submit.php": {
+  //       target: "https://temp.sselesnes.site/",
+  //       changeOrigin: true,
+  //     },
+  //   },
+  // },
   build: {
     target: "es5",
     minify: "terser",

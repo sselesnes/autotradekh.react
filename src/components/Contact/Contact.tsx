@@ -112,6 +112,7 @@ export default function Contact({ closeModal }: ModalProps) {
               placeholder="Марка, модель, стан авто"
               value={formData.message}
               onChange={handleInputChange}
+              required
               className={css.textarea}
             />
             <button type="submit" disabled={isSubmitting} className={css.submitButton}>

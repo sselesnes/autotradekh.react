@@ -1,12 +1,12 @@
 import css from "./Workflow.module.css";
 
 // Імпортуємо зображення
-import w1 from "../../assets/w1.webp";
-import w2 from "../../assets/w2.webp";
-import w3 from "../../assets/w3.webp";
-import w4 from "../../assets/w4.webp";
-import w5 from "../../assets/w5.webp";
-import w6 from "../../assets/w6.webp";
+import w1 from "../../assets/w1-t2.webp";
+import w2 from "../../assets/w2-t2.webp";
+import w3 from "../../assets/w3-t2.webp";
+import w4 from "../../assets/w4-t2.webp";
+import w5 from "../../assets/w5-t2.webp";
+import w6 from "../../assets/w6-t2.webp";
 
 const workflowList = [
   {

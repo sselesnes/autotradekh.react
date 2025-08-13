@@ -1,7 +1,17 @@
 import css from "./Hero.module.css";
-import car from "../../assets/alfa-romeo-147-shadow.webp";
-import handKey from "../../assets/firefly-hand-key.webp";
-import handMoney from "../../assets/firefly-hand-money.webp";
+import carM1 from "../../assets/alfa-romeo-147-shadow-m1.webp";
+import carM2 from "../../assets/alfa-romeo-147-shadow-m2.webp";
+import carT1 from "../../assets/alfa-romeo-147-shadow-t1.webp";
+import carT2 from "../../assets/alfa-romeo-147-shadow-t2.webp";
+import carD1 from "../../assets/alfa-romeo-147-shadow-t2.webp";
+import handKeyT1 from "../../assets/firefly-hand-key-t1.webp";
+import handKeyT2 from "../../assets/firefly-hand-key-t2.webp";
+import handKeyD1 from "../../assets/firefly-hand-key-d1.webp";
+import handKeyD2 from "../../assets/firefly-hand-key-d2.webp";
+import handMoneyT1 from "../../assets/firefly-hand-money-t1.webp";
+import handMoneyT2 from "../../assets/firefly-hand-money-t2.webp";
+import handMoneyD1 from "../../assets/firefly-hand-money-d1.webp";
+import handMoneyD2 from "../../assets/firefly-hand-money-d2.webp";
 import arrow_right from "../../assets/arrow-right.svg";
 
 import { useGSAP } from "@gsap/react";
@@ -56,9 +66,24 @@ export default function Hero({ openModal }: ModalProps) {
         <img className={css.arrow_right} src={arrow_right} alt="Arrow" />
       </h2>
       <div className={css.car_container}>
-        <img className={css.car} src={car} alt="car" />
-        <img className={css.hand_key} src={handKey} alt="hand with car key" />
-        <img className={css.hand_money} src={handMoney} alt="hand with money" />
+        <picture>
+          <source media="(max-width: 767px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
+          <source media="(min-width: 768px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
+          <source media="(min-width: 1280px)" srcSet={carD1} />
+          <img className={css.car} src={carM1} alt="car" />
+        </picture>
+
+        <picture>
+          <source media="(max-width: 1279px)" srcSet={`${handKeyT1} 1x, ${handKeyT2} 2x`} />
+          <source media="(min-width: 1280px)" srcSet={`${handKeyD1} 1x, ${handKeyD2} 2x`} />
+          <img className={css.hand_key} src={handKeyT1} alt="hand with car key" />
+        </picture>
+
+        <picture>
+          <source media="(max-width: 1279px)" srcSet={`${handMoneyT1} 1x, ${handMoneyT2} 2x`} />
+          <source media="(min-width: 1280px)" srcSet={`${handMoneyD1} 1x, ${handMoneyD2} 2x`} />
+          <img className={css.hand_money} src={handMoneyT1} alt="hand with money" />
+        </picture>
       </div>
     </section>
   );
