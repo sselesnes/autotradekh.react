@@ -1,7 +1,5 @@
 import css from "./Contact.module.css";
-
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useRef } from "react";
 import type { ModalProps } from "../../types/types.ts";
 
 interface FormData {
@@ -25,7 +23,9 @@ export default function Contact({ closeModal }: ModalProps) {
   const [formMessage, setFormMessage] = useState<FormMessage>({ text: "", status: null });
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  // Fetch CSRF token on component mount
+  const modalRef = useRef<HTMLDivElement>(null);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     fetch("/api/csrf-token.php")
       .then(res => res.json())
@@ -33,6 +33,13 @@ export default function Contact({ closeModal }: ModalProps) {
       .catch(() => {
         setFormMessage({ text: "Помилка: Не вдалося отримати CSRF-токен", status: "error" });
       });
+
+    if (modalRef.current) {
+      modalRef.current.focus();
+    }
+    if (nameInputRef.current) {
+      nameInputRef.current.focus();
+    }
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -45,7 +52,6 @@ export default function Contact({ closeModal }: ModalProps) {
     setIsSubmitting(true);
     setFormMessage({ text: "", status: null });
 
-    // Client-side phone validation
     const phoneRegex = /^\+?[0-9\s\-()]{7,15}$/;
     if (!phoneRegex.test(formData.phone)) {
       setFormMessage({ text: "Помилка: Некоректний номер телефону", status: "error" });
@@ -70,8 +76,14 @@ export default function Contact({ closeModal }: ModalProps) {
 
       const result = await response.json();
       setFormMessage({ text: result.message, status: result.status });
+
       if (result.status === "success") {
         setFormData({ name: "", phone: "", message: "" });
+        if (closeModal) {
+          setTimeout(() => {
+            closeModal();
+          }, 3000);
+        }
       }
     } finally {
       setIsSubmitting(false);
@@ -79,14 +91,35 @@ export default function Contact({ closeModal }: ModalProps) {
   };
 
   return (
-    <section id="contact" className={css.formSection}>
+    <section
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-form-title"
+      className={css.formSection}
+    >
       <div className={css.backdrop} onClick={closeModal}>
-        <div className={css.modal} onClick={e => e.stopPropagation()}>
-          <button className={css.closeBtn} onClick={closeModal}>
+        <div
+          className={css.modal}
+          onClick={e => e.stopPropagation()}
+          role="document"
+          tabIndex={-1}
+          ref={modalRef}
+        >
+          <button
+            className={css.closeBtn}
+            onClick={closeModal}
+            aria-label="Закрити модальне вікно"
+          >
             ✖
           </button>
-          <h2 className={css.formTitle}>Залишити заявку</h2>
-          <form onSubmit={handleSubmit} className={css.form}>
+          <h2 id="contact-form-title" className={css.formTitle}>
+            Залишити заявку
+          </h2>
+          <form
+            onSubmit={handleSubmit}
+            className={css.form}
+            aria-describedby="form-instructions"
+          >
             <input type="hidden" name="csrf_token" value={csrfToken} />
             <input
               type="text"
@@ -96,6 +129,8 @@ export default function Contact({ closeModal }: ModalProps) {
               onChange={handleInputChange}
               required
               className={css.input}
+              aria-label="Ваше ім'я"
+              ref={nameInputRef}
             />
             <input
               type="tel"
@@ -104,8 +139,9 @@ export default function Contact({ closeModal }: ModalProps) {
               value={formData.phone}
               onChange={handleInputChange}
               required
-              title="Введіть коректний номер телефону (10 цифр, можливі пробіли, дефіси, дужки)"
               className={css.input}
+              aria-label="Номер телефону"
+              title="Введіть коректний номер телефону"
             />
             <textarea
               name="message"
@@ -114,16 +150,18 @@ export default function Contact({ closeModal }: ModalProps) {
               onChange={handleInputChange}
               required
               className={css.textarea}
+              aria-label="Марка, модель, стан авто"
             />
+            <div
+              aria-live="polite"
+              className={`${css.message} ${css[formMessage.status || ""]}`}
+            >
+              {formMessage.text}
+            </div>
             <button type="submit" disabled={isSubmitting} className={css.submitButton}>
               {isSubmitting ? "Відправка..." : "Відправити заявку"}
             </button>
           </form>
-          {formMessage.text && (
-            <div className={`${css.message} ${css[formMessage.status || ""]}`}>
-              {formMessage.text}
-            </div>
-          )}
         </div>
       </div>
     </section>
