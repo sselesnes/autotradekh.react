@@ -178,13 +178,3 @@
     width: 100%;
   }
 }
-
-@media only screen and (min-width: 1440px) {
-  .hand_key {
-    left: -8.5%;
-    top: 3%;
-  }
-  .hand_money {
-    right: -8.5%;
-  }
-}

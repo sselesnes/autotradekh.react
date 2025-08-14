@@ -71,21 +71,21 @@ export default function Hero({ openModal }: ModalProps) {
       </div>
       <div className={css.car_container}>
         <picture>
-          <source media="(max-width: 767px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
-          <source media="(min-width: 768px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
-          <source media="(min-width: 1280px)" srcSet={carD1} />
-          <img className={css.car} src={carM1} alt="Сірий автомобіль Alfa Romeo 147" />
+          <source media="(max-width: 380px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
+          <source media="(max-width: 1279px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
+          <source media="(min-width: 1280px)" srcSet={`${carD1} 1x, ${carD1} 2x`} />
+          <img className={css.car} src={carD1} alt="Сірий автомобіль Alfa Romeo 147" />
         </picture>
 
         <picture>
-          <source media="(max-width: 1279px)" srcSet={`${handKeyT1} 1x, ${handKeyT2} 2x`} />
-          <source media="(min-width: 1280px)" srcSet={`${handKeyD1} 1x, ${handKeyD2} 2x`} />
+          <source media="(max-width: 380px)" srcSet={`${handKeyT1} 1x, ${handKeyT2} 2x`} />
+          <source media="(min-width: 381px)" srcSet={`${handKeyD1} 1x, ${handKeyD2} 2x`} />
           <img className={css.hand_key} src={handKeyT1} alt="Рука з ключем від автомобіля" />
         </picture>
 
         <picture>
-          <source media="(max-width: 1279px)" srcSet={`${handMoneyT1} 1x, ${handMoneyT2} 2x`} />
-          <source media="(min-width: 1280px)" srcSet={`${handMoneyD1} 1x, ${handMoneyD2} 2x`} />
+          <source media="(max-width: 380px)" srcSet={`${handMoneyT1} 1x, ${handMoneyT2} 2x`} />
+          <source media="(min-width: 381px)" srcSet={`${handMoneyD1} 1x, ${handMoneyD2} 2x`} />
           <img className={css.hand_money} src={handMoneyT1} alt="Рука з пачкою грошей" />
         </picture>
       </div>
