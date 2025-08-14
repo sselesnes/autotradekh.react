@@ -44,7 +44,7 @@
 }
 
 .car_container {
-  padding: 64px 0;
+  padding: 32px 0;
   position: relative;
   display: inline-block;
 }
@@ -143,7 +143,7 @@
   }
   .hand_key {
     left: -32px;
-    top: 10px;
+    top: -30px;
   }
   .hand_money {
     bottom: -20px;
