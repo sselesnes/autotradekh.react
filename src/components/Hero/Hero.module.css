@@ -164,11 +164,27 @@
     bottom: -2%;
     left: 65%;
   }
-
   .hand_key {
     width: 240px;
+    top: -2%;
+    left: -3%;
   }
   .hand_money {
     width: 240px;
+    right: -2.7%;
+    bottom: -5%;
+  }
+  .car_container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hand_key {
+    left: -8.5%;
+    top: 3%;
+  }
+  .hand_money {
+    right: -8.5%;
   }
 }
