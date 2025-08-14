@@ -1,6 +1,6 @@
-// import { useState, useEffect, useRef } from "react";
-import { Accordion, AccordionItem } from "@szhsin/react-accordion";
+// benefits aria
 
+import { Accordion, AccordionItem } from "@szhsin/react-accordion";
 import css from "./Benefits.module.css";
 import svg_ok from "../../assets/ok.svg";
 
@@ -94,22 +94,31 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section role="benefits" className={css.benefits}>
-      <h1 className={css.benefits_title}>ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH ?</h1>
+    <section aria-labelledby="benefits-title" className={css.benefits}>
+      <h1 id="benefits-title" className={css.benefits_title}>
+        ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH?
+      </h1>
       {benefits.length > 0 && (
         <Accordion transition transitionTimeout={250}>
-          <ul className={`${css.benefits_list} `}>
+          <ul className={css.benefits_list} role="list">
             {benefits.map((benefit, index) => (
-              <li key={index} className={css.benefit_item}>
+              <li key={index} className={css.benefit_item} role="listitem">
                 <AccordionItem
                   header={
                     <div className={css.benefit_title}>
-                      <img src={svg_ok} className={css.ok_icon} alt="Check icon" />
+                      <img src={svg_ok} className={css.ok_icon} alt="Іконка перевірки" />
                       <h2 className={css.main}>{benefit.title}</h2>
                     </div>
                   }
                 >
-                  <p className={css.describe}>{benefit.describe}</p>
+                  <p
+                    className={css.describe}
+                    id={`benefit-panel-${index}`}
+                    aria-labelledby={`benefit-title-${index}`}
+                    role="region"
+                  >
+                    {benefit.describe}
+                  </p>
                 </AccordionItem>
               </li>
             ))}

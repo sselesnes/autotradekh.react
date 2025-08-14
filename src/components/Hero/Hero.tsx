@@ -1,3 +1,5 @@
+// hero aria
+
 import css from "./Hero.module.css";
 import carM1 from "../../assets/alfa-romeo-147-shadow-m1.webp";
 import carM2 from "../../assets/alfa-romeo-147-shadow-m2.webp";
@@ -41,48 +43,50 @@ export default function Hero({ openModal }: ModalProps) {
   }, []);
 
   return (
-    <section role="hero">
-      <h1 className={css.banner_main}>Терміновий викуп авто в Харкові</h1>
+    <section aria-labelledby="hero-title" className={css.hero}>
+      <h1 id="hero-title" className={css.banner_main}>
+        Терміновий викуп авто в Харкові
+      </h1>
       <p className={css.banner_content}>
         Наш сервіс пропонує швидкий і безпечний викуп автомобілів.
-        {/* <br></br>
-        <br></br>Допоможемо у продажу після аварій, пожеж, прильотів та навіть з проблемними
-        документами або у кредиті. */}
         <br></br>
         <br></br>
         Щоб дізнатися вартість свого авто просто
         <strong> заповніть форму на сайті або подзвоніть нам.</strong>
       </p>
-      <h2 className={css.banner_sub}>
-        <img className={css.arrow_left} src={arrow_right} alt="Arrow" />
-        <a className={css.button} href="tel:+380956196756">
+      <div className={css.banner_sub} role="toolbar" aria-label="Варіанти зв'язку">
+        <img className={css.arrow_left} src={arrow_right} alt="" aria-hidden="true" />
+        <a
+          className={css.button}
+          href="tel:+380956196756"
+          aria-label="Зателефонувати для отримання консультації"
+        >
           Зателефонуйте
         </a>
         <p>або</p>
-        {/* Викликаємо openModal, переданий з App */}
         <button className={css.button} onClick={openModal}>
           залиште заявку
         </button>
-        <img className={css.arrow_right} src={arrow_right} alt="Arrow" />
-      </h2>
+        <img className={css.arrow_right} src={arrow_right} alt="" aria-hidden="true" />
+      </div>
       <div className={css.car_container}>
         <picture>
           <source media="(max-width: 767px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
           <source media="(min-width: 768px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
           <source media="(min-width: 1280px)" srcSet={carD1} />
-          <img className={css.car} src={carM1} alt="car" />
+          <img className={css.car} src={carM1} alt="Сірий автомобіль Alfa Romeo 147" />
         </picture>
 
         <picture>
           <source media="(max-width: 1279px)" srcSet={`${handKeyT1} 1x, ${handKeyT2} 2x`} />
           <source media="(min-width: 1280px)" srcSet={`${handKeyD1} 1x, ${handKeyD2} 2x`} />
-          <img className={css.hand_key} src={handKeyT1} alt="hand with car key" />
+          <img className={css.hand_key} src={handKeyT1} alt="Рука з ключем від автомобіля" />
         </picture>
 
         <picture>
           <source media="(max-width: 1279px)" srcSet={`${handMoneyT1} 1x, ${handMoneyT2} 2x`} />
           <source media="(min-width: 1280px)" srcSet={`${handMoneyD1} 1x, ${handMoneyD2} 2x`} />
-          <img className={css.hand_money} src={handMoneyT1} alt="hand with money" />
+          <img className={css.hand_money} src={handMoneyT1} alt="Рука з пачкою грошей" />
         </picture>
       </div>
     </section>

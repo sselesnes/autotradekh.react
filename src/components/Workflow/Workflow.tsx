@@ -1,6 +1,6 @@
-import css from "./Workflow.module.css";
+//workflow aria
 
-// Імпортуємо зображення
+import css from "./Workflow.module.css";
 import w1 from "../../assets/w1-t2.webp";
 import w2 from "../../assets/w2-t2.webp";
 import w3 from "../../assets/w3-t2.webp";
@@ -13,7 +13,7 @@ const workflowList = [
     title: "Зв’яжіться з нами",
     describe:
       "Зателефонуйте або заповніть форму на нашому сайті, вказавши основну інформацію про Ваш автомобіль",
-    image: w1, // Використовуємо імпортовану змінну
+    image: w1,
   },
   {
     title: "Попередня оцінка",
@@ -53,10 +53,18 @@ export default function Workflow() {
       <h2 id="workflow-title" className={css.workflow_title}>
         Як це працює?
       </h2>
-      <ul className={css.list}>
+      <ul className={css.list} aria-label="Покроковий процес викупу авто">
         {workflowList.map((workflow, index) => (
-          <li className={css.item} key={index}>
-            <img className={css.image} src={workflow.image} alt={`Крок: ${workflow.title}`} />
+          <li
+            className={css.item}
+            key={index}
+            aria-label={`Крок ${index + 1}: ${workflow.title}`}
+          >
+            <img
+              className={css.image}
+              src={workflow.image}
+              alt={`Ілюстрація для кроку: ${workflow.title}`}
+            />
             <div className={css.text_block}>
               <h3 className={css.title}>{workflow.title}</h3>
               <p className={css.describe}>{workflow.describe}</p>

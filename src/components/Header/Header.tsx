@@ -1,7 +1,7 @@
+// header aria
 import css from "./Header.module.css";
 import telegramLogo from "../../assets/telegram.webp";
 import viberLogo from "../../assets/viber.webp";
-// import tiktokLogo from "../../assets/tiktok.svg";
 import autotradekhLogo from "../../assets/autotradekh-logo2.webp";
 
 import { useRef } from "react";
@@ -32,42 +32,58 @@ export default function Header() {
             .to(logoRef.current, { opacity: 1, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
         } else {
           gsap.set([logoRef.current, phoneRef.current], { opacity: 1 });
-          gsap.killTweensOf([logoRef.current, phoneRef.current]); // Зупиняємо всі анімації
+          gsap.killTweensOf([logoRef.current, phoneRef.current]);
         }
       };
 
-      handleAnimation(); // Виклик при ініціалізації
-      mediaQuery.addEventListener("change", handleAnimation); // Реакція на зміну розміру
+      handleAnimation();
+      mediaQuery.addEventListener("change", handleAnimation);
 
-      return () => mediaQuery.removeEventListener("change", handleAnimation); // Очищення
+      return () => mediaQuery.removeEventListener("change", handleAnimation);
     },
     { scope: container }
   );
 
   return (
     <header className={css.container} ref={container}>
-      <div className={css.autotradekh_logo_wrapper} ref={logoRef}>
-        <img className={css.autotradekh_logo} src={autotradekhLogo} alt="Autotradekh logo" />
+      <div
+        className={css.autotradekh_logo_wrapper}
+        ref={logoRef}
+        aria-label="Головна сторінка Autotradekh"
+      >
+        <a href="/" aria-label="Перейти на головну сторінку">
+          <img
+            className={css.autotradekh_logo}
+            src={autotradekhLogo}
+            alt="Логотип Autotradekh"
+          />
+        </a>
       </div>
+
       <div className={css.phone} ref={phoneRef}>
-        <a href="tel:+380956196756">095 619 67 56</a>
+        <a href="tel:+380956196756" aria-label="Зателефонувати: 095 619 67 56">
+          095 619 67 56
+        </a>
       </div>
 
-      <div className={css.messengers}>
-        {/* <div className={css.tiktok}>
-          <a href="https://www.tiktok.com/@auto_trade_kh" target="_blank">
-            <img src={tiktokLogo} alt="tiktok" />
-          </a>
-        </div> */}
-
+      <div className={css.messengers} aria-label="Зв'язатися через месенджери">
         <div className={css.telegram}>
-          <a href="https://t.me/+380956196756" target="_blank">
-            <img src={telegramLogo} alt="telegram" />
+          <a
+            href="https://t.me/+380956196756"
+            target="_blank"
+            aria-label="Написати у Telegram"
+            rel="noopener noreferrer"
+          >
+            <img src={telegramLogo} alt="Логотип Telegram" />
           </a>
         </div>
         <div className={css.viber}>
-          <a href="viber://chat?number=%2B380956196756">
-            <img src={viberLogo} alt="viber" />
+          <a
+            href="viber://chat?number=%2B380956196756"
+            aria-label="Написати у Viber"
+            rel="noopener noreferrer"
+          >
+            <img src={viberLogo} alt="Логотип Viber" />
           </a>
         </div>
       </div>

@@ -1,3 +1,5 @@
+// contact2 aria
+
 import css from "./Contact2.module.css";
 import arrow_right from "../../assets/arrow-right.svg";
 
@@ -20,15 +22,16 @@ export default function Contact2({ openModal }: ModalProps) {
 
   return (
     <section role="region" aria-labelledby="contact2-title">
-      <h2 className={css.banner_main}>Час діяти</h2>
+      <h2 id="contact2-title" className={css.banner_main}>
+        Час діяти
+      </h2>
       <p className={css.banner_content}>
         <strong>Лише один крок відділяє Вас від мети.</strong> Залиште свою заявку і наша
         команда допоможе Вам отримати кошти швидко та комфортно.
       </p>
-      {/* Викликаємо openModal, переданий з App */}
       <button className={css.button} onClick={openModal}>
         Отримати кошти
-        <img className={css.arrow_left} src={arrow_right} alt="Arrow" />
+        <img className={css.arrow_left} src={arrow_right} alt="" aria-hidden="true" />
       </button>
       <p className={css.banner_content}>
         Ми зв’яжемось із Вами у найкоротший термін, щоб узгодити всі деталі.
