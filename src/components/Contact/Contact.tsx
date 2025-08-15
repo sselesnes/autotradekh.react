@@ -163,15 +163,16 @@ export default function Contact({ closeModal }: ModalProps) {
               className={css.textarea}
               aria-label="Марка, модель, стан авто"
             />
+            <button type="submit" disabled={isSubmitting} className={css.submitButton}>
+              {isSubmitting ? "Відправка..." : "Відправити заявку"}
+            </button>
+
             <div
               aria-live="polite"
               className={`${css.message} ${css[formMessage.status || ""]}`}
             >
               {formMessage.text}
             </div>
-            <button type="submit" disabled={isSubmitting} className={css.submitButton}>
-              {isSubmitting ? "Відправка..." : "Відправити заявку"}
-            </button>
           </form>
         </div>
       </div>
