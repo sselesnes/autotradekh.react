@@ -1,8 +1,36 @@
-.formSection {
-  max-width: 500px;
-  /* margin: 0 auto; */
-  /* padding: 16px 24px; */
-  /* background-color: cyan; */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formModal {
+  z-index: 1;
+  position: fixed;
+  margin: auto 24px;
+  padding: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.closeBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 10px 5px;
+  border: none;
+  background-color: inherit;
+  font-size: 12px;
+  line-height: 0;
 }
 .formTitle {
   padding-bottom: 16px;
@@ -12,7 +40,6 @@
   flex-direction: column;
   gap: 15px;
 }
-
 .input,
 .textarea {
   padding: 10px;
@@ -20,12 +47,10 @@
   border-radius: 4px;
   font-size: 16px;
 }
-
 .textarea {
   min-height: 100px;
-  resize: vertical;
+  resize: none;
 }
-
 .submitButton {
   padding: 10px;
   background-color: var(--main);
@@ -43,62 +68,55 @@
   background-color: #cccccc;
   cursor: not-allowed;
 }
-
 .message {
   margin-top: 10px;
   padding: 10px;
   border-radius: 4px;
 }
-
 .success {
   background-color: #d4edda;
   color: #155724;
 }
-
 .error {
   background-color: #f8d7da;
   color: #721c24;
 }
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  z-index: 1;
-  position: fixed;
-  margin: auto 24px;
-  /* right: 32px;
-  bottom: 24px; */
-  padding: 24px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  background-color: white;
-  /* color: white; */
-  font-weight: 400;
-  text-transform: uppercase;
-  /* max-width: 100px; */
-}
-
-.closeBtn {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  padding: 10px 5px;
-  border: none;
-  /* border: solid 1px grey;
-  border-radius: 50%; */
-  background-color: inherit;
-  font-size: 12px;
-  line-height: 0;
+@media only screen and (min-width: 768px) {
+  .closeBtn {
+    top: 4px;
+    right: 4px;
+    padding: 16px 10px;
+    font-size: 16px;
+  }
+  .formModal {
+    font-size: 2rem;
+    width: 700px;
+  }
+  .input,
+  .textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 24px;
+  }
+  .textarea {
+    min-height: 200px;
+    resize: none;
+  }
+  .submitButton {
+    padding: 10px;
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 32px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 24px;
+  }
 }

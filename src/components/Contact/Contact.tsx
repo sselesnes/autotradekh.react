@@ -1,3 +1,5 @@
+//contact aria
+
 import css from "./Contact.module.css";
 import { useState, useEffect, useRef } from "react";
 import type { ModalProps } from "../../types/types.ts";
@@ -25,6 +27,15 @@ export default function Contact({ closeModal }: ModalProps) {
 
   const modalRef = useRef<HTMLDivElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
 
   useEffect(() => {
     fetch("/api/csrf-token.php")
@@ -99,7 +110,7 @@ export default function Contact({ closeModal }: ModalProps) {
     >
       <div className={css.backdrop} onClick={closeModal}>
         <div
-          className={css.modal}
+          className={css.formModal}
           onClick={e => e.stopPropagation()}
           role="document"
           tabIndex={-1}

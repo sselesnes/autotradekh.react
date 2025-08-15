@@ -27,19 +27,19 @@ export default defineConfig({
   //     },
   //   },
   // },
-  build: {
-    target: "es5",
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ["console.info", "console.debug", "console.warn"],
-        passes: 2,
-      },
-      mangle: true,
-      format: { comments: false },
-    },
-    sourcemap: false,
-  },
+  // build: {
+  //   target: "es5",
+  //   minify: "terser",
+  //   terserOptions: {
+  //     compress: {
+  //       drop_console: true,
+  //       drop_debugger: true,
+  //       pure_funcs: ["console.info", "console.debug", "console.warn"],
+  //       passes: 2,
+  //     },
+  //     mangle: true,
+  //     format: { comments: false },
+  //   },
+  //   sourcemap: false,
+  // },
 });
