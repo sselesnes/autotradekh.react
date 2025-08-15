@@ -74,7 +74,11 @@ export default function Hero({ openModal }: ModalProps) {
           <source media="(max-width: 380px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
           <source media="(max-width: 1279px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
           <source media="(min-width: 1280px)" srcSet={`${carD1} 1x, ${carD1} 2x`} />
-          <img className={css.car} src={carD1} alt="Сірий автомобіль Alfa Romeo 147" />
+          <img
+            className={css.car}
+            src={carM1}
+            alt="Aвтомобіль Alfa Romeo 147 кольору металік"
+          />
         </picture>
 
         <picture>
