@@ -78,14 +78,18 @@ export default function Contact({ closeModal }: ModalProps) {
         credentials: "include",
       });
 
+      const result = await response.json();
+      console.log("Response status:", response.status, "Response body:", result); // Лог для діагностики
+
       if (!response.ok) {
-        const errorData = await response.json().catch(() => {
-          throw new Error("Помилка: Некоректна відповідь від сервера");
+        setFormMessage({
+          text: result.message || "Помилка: Невідома помилка сервера",
+          status: "error",
         });
-        throw new Error(errorData.message || "Помилка: Невідома помилка сервера");
+        setIsSubmitting(false);
+        return;
       }
 
-      const result = await response.json();
       setFormMessage({ text: result.message, status: result.status });
 
       if (result.status === "success") {
@@ -96,6 +100,15 @@ export default function Contact({ closeModal }: ModalProps) {
           }, 3000);
         }
       }
+    } catch (error) {
+      let errorMessage = "Не вдалося відправити запит до сервера";
+      if (error instanceof Error) {
+        errorMessage = error.message || errorMessage;
+      }
+      setFormMessage({
+        text: `Помилка: ${errorMessage}`,
+        status: "error",
+      });
     } finally {
       setIsSubmitting(false);
     }
