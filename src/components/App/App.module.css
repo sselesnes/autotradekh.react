@@ -5,6 +5,7 @@
   max-width: 420px;
   padding: 0 20px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* Tablet devices */
