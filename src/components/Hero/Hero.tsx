@@ -71,7 +71,8 @@ export default function Hero({ openModal }: ModalProps) {
       </div>
       <div className={css.car_container}>
         <picture>
-          <source media="(max-width: 380px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
+          <source media="(max-width: 414.01px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
+          {/* vw414 / img375 */}
           <source media="(max-width: 1279px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
           <source media="(min-width: 1280px)" srcSet={`${carD1} 1x, ${carD1} 2x`} />
           <img
