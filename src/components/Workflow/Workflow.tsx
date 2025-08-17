@@ -1,49 +1,61 @@
 //workflow aria
 
 import css from "./Workflow.module.css";
-import w1 from "../../assets/w1-t2.webp";
-import w2 from "../../assets/w2-t2.webp";
-import w3 from "../../assets/w3-t2.webp";
-import w4 from "../../assets/w4-t2.webp";
-import w5 from "../../assets/w5-t2.webp";
-import w6 from "../../assets/w6-t2.webp";
+import w1_t1 from "../../assets/w1-t1.webp";
+import w1_t2 from "../../assets/w1-t2.webp";
+import w1_d1 from "../../assets/w1-d1.webp";
+import w2_t1 from "../../assets/w2-t1.webp";
+import w2_t2 from "../../assets/w2-t2.webp";
+import w2_d1 from "../../assets/w2-d1.webp";
+import w3_t1 from "../../assets/w3-t1.webp";
+import w3_t2 from "../../assets/w3-t2.webp";
+import w3_d1 from "../../assets/w3-d1.webp";
+import w4_t1 from "../../assets/w4-t1.webp";
+import w4_t2 from "../../assets/w4-t2.webp";
+import w4_d1 from "../../assets/w4-d1.webp";
+import w5_t1 from "../../assets/w5-t1.webp";
+import w5_t2 from "../../assets/w5-t2.webp";
+import w5_d1 from "../../assets/w5-d1.webp";
+import w6_t1 from "../../assets/w6-t1.webp";
+import w6_t2 from "../../assets/w6-t2.webp";
+import w6_d1 from "../../assets/w6-d1.webp";
 
 const workflowList = [
   {
     title: "Зв’яжіться з нами",
     describe:
       "Зателефонуйте або заповніть форму на нашому сайті, вказавши основну інформацію про Ваш автомобіль",
-    image: w1,
+    image: [w1_t1, w1_t2, w1_d1],
   },
   {
     title: "Попередня оцінка",
     describe:
       "Ви отримуєте попередню пропозицію щодо вартості авто на основі його стану та ринкових цін",
-    image: w3,
+    image: [w3_t1, w3_t2, w3_d1],
   },
   {
     title: "Виїзд експерта",
     describe:
       "Наш спеціаліст безкоштовно приїде до Вас у зручний час для огляду автомобіля та оцінки його стану",
-    image: w2,
+    image: [w2_t1, w2_t2, w2_d1],
   },
   {
     title: "Погодження умов",
     describe:
       "Ми обговорюємо з ами остаточну ціну та деталі угоди, щоб все було прозоро та зрозуміло",
-    image: w5,
+    image: [w5_t1, w5_t2, w5_d1],
   },
   {
     title: "Допомога з документами",
     describe:
       "Ми беремо на себе підготовку всіх необхідних документів для швидкого та законного оформлення",
-    image: w4,
+    image: [w4_t1, w4_t2, w4_d1],
   },
   {
     title: "Отримайте ваші кошти",
     describe:
       "Після підписання документів ви одразу отримуєте гроші зручним для Вас способом – готівкою чи на картку",
-    image: w6,
+    image: [w6_t1, w6_t2, w6_d1],
   },
 ];
 
@@ -60,11 +72,22 @@ export default function Workflow() {
             key={index}
             aria-label={`Крок ${index + 1}: ${workflow.title}`}
           >
-            <img
-              className={css.image}
-              src={workflow.image}
-              alt={`Ілюстрація для кроку: ${workflow.title}`}
-            />
+            <picture className={css.image}>
+              <source
+                media="(max-width: 1000px)"
+                srcSet={`${workflow.image[0]} 1x, ${workflow.image[1]} 2x`}
+              />
+              <source
+                media="(min-width: 1000px)"
+                srcSet={`${workflow.image[2]} 1x, ${workflow.image[0]} 2x`}
+              />
+              <img
+                className={css.car}
+                src={workflow.image[2]}
+                alt={`Ілюстрація для кроку: ${workflow.title}`}
+              />
+            </picture>
+
             <div className={css.text_block}>
               <h3 className={css.title}>{workflow.title}</h3>
               <p className={css.describe}>{workflow.describe}</p>
@@ -75,3 +98,11 @@ export default function Workflow() {
     </section>
   );
 }
+
+// workflow icons
+//  M  /  T  /  D
+// 186 / 230 / 128
+// 372 / 460 / 128
+// =>
+// 256 / 256 / 128
+// 512 / 512 / 256
