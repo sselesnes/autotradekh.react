@@ -112,7 +112,7 @@
   }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1000px) {
   .item:hover .title {
     opacity: 1;
   }
