@@ -1,3 +1,6 @@
+.env
+!hosting/*
+
 # Logs
 logs
 *.log
