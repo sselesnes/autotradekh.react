@@ -90,6 +90,7 @@ export default function Workflow() {
                 type="image/webp"
               />
               <img
+                loading="lazy"
                 className={css.car}
                 src={workflow.image[3]}
                 alt={`Ілюстрація для кроку: ${workflow.title}`}

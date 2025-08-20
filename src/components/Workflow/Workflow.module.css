@@ -145,6 +145,7 @@
 
   .title {
     position: static;
+    padding-left: 8px;
     font-size: 1.5rem;
     color: var(--main);
     text-shadow: none;

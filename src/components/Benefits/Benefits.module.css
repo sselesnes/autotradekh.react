@@ -72,6 +72,9 @@
   .benefits_list {
     padding-top: 8px;
   }
+  .benefit_title {
+    gap: 1rem;
+  }
   .benefit_item {
     display: flex;
     padding: 24px 0 16px;
