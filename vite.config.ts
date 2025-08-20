@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     imagetools(),
     ViteImageOptimizer({
-      webp: { quality: 80 },
+      // webp: { quality: 80 },
       png: { quality: 80 },
     }),
     legacy({
