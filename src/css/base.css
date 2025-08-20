@@ -6,27 +6,9 @@
   --dark-green: #006400;
   --dark-green-soft: #007a00;
 
-  /* 
-  --accet-green: #00b068;
-  --accet-green-dt: #14c57c;
-  --white: #f0f0f0;
-  --light-grey: #e4e5e6;
-  --hover-grey: #bbb;
-  --light-accent: #bcdfd1;
-  --hover: #009156;
-  --black-dt: #1e2023;
-    --white-dt: #f0f0f0;
-  --charcoal-dt: #2a2d32;
-  --hover-charcoal-dt: #3b3f45;
-  --dark-accet-dt: #204136;
-  --hover-green-dt: #009156;
-  --error: #e74a3b; */
-
   --font-family: "Roboto", sans-serif;
   --main: var(--blue);
   --main-soft: var(--blue-soft);
-  --second-family: "Impact", sans-serif;
-  --third-family: "Montserrat", sans-serif;
 
   font-family: var(--font-family);
   font-weight: 300;

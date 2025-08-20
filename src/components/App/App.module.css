@@ -2,7 +2,7 @@
 .container {
   text-align: center;
   min-width: 320px;
-  max-width: 420px;
+  max-width: 420px; /* 414px android / ios */
   padding: 0 20px;
   margin: 0 auto;
   overflow-x: hidden;
@@ -14,7 +14,7 @@
 @media only screen and (min-width: 768px) {
   .container {
     min-width: 768px;
-    max-width: 1024px;
+    max-width: 1024px; /* landscape */
     padding: 0 32px;
   }
 }

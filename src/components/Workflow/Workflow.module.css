@@ -11,7 +11,6 @@
 }
 
 .list {
-  /* padding-top: 48px; */
   padding-top: 24px;
   display: flex;
   justify-content: center;
@@ -49,7 +48,7 @@
   padding: 0 12px;
 }
 .item:hover .title {
-  opacity: 0; /* При наведенні робимо елемент прозорим */
+  opacity: 0;
 }
 
 .describe {
@@ -65,13 +64,13 @@
   z-index: 1;
   width: 100%;
   text-align: center;
-  opacity: 0; /* Початкова прозорість для плавного появи */
-  transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
   padding: 8px;
 }
 
 .item:hover .describe {
-  opacity: 1; /* При наведенні робимо елемент видимим */
+  opacity: 1;
 }
 
 .item::before {
@@ -82,13 +81,13 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0; /* Початкова прозорість для плавного затемнення */
-  transition: opacity 0.2s ease-in-out; /* Плавний перехід */
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
   border-radius: 8px;
 }
 
 .item:hover::before {
-  opacity: 0.5; /* При наведенні курсору затемнення на 50% */
+  opacity: 0.5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -109,7 +108,7 @@
   }
 
   .item:hover .title {
-    opacity: 0; /* При наведенні робимо елемент прозорим */
+    opacity: 0;
   }
 
   .describe {

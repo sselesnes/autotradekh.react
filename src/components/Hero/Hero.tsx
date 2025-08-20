@@ -79,7 +79,6 @@ export default function Hero({ openModal }: ModalProps) {
             srcSet={`${carM1} 1x, ${carM2} 2x`}
             type="image/webp"
           />
-          {/* vw414 / img375 */}
           <source
             media="(max-width: 1279px)"
             srcSet={`${carT1} 1x, ${carT2} 2x`}
@@ -90,7 +89,6 @@ export default function Hero({ openModal }: ModalProps) {
             srcSet={`${carD1} 1x, ${carD1} 2x`}
             type="image/webp"
           />
-          {/* <source srcSet={carPNG} type="image/png" /> */}
           <img
             className={css.car}
             src={carPNG}

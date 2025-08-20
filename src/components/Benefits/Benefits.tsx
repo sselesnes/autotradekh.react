@@ -106,7 +106,7 @@ export default function Benefits() {
                 <AccordionItem
                   header={
                     <div className={css.benefit_title}>
-                      <img src={svg_ok} className={css.ok_icon} alt="Іконка перевірки" />
+                      <img src={svg_ok} className={css.ok_icon} alt="Іконка ok" aria-hidden />
                       <h2 className={css.main}>{benefit.title}</h2>
                     </div>
                   }

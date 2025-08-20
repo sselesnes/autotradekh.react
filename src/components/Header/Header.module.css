@@ -9,12 +9,10 @@
   overflow: hidden;
 }
 .autotradekh_logo_wrapper {
-  /* padding-left: 20px; */
   position: absolute;
 }
 
 .autotradekh_logo {
-  /* width: 72px; */
   height: 24px;
 }
 
@@ -54,7 +52,6 @@
 
 @media only screen and (min-width: 768px) {
   .container {
-    /* align-items: center; */
     height: auto;
     justify-content: space-between;
   }

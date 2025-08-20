@@ -106,11 +106,3 @@ export default function Workflow() {
     </section>
   );
 }
-
-// workflow icons
-//  M  /  T  /  D
-// 186 / 230 / 128
-// 372 / 460 / 128
-// =>
-// 256 / 256 / 128
-// 512 / 512 / 256

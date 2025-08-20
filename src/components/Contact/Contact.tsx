@@ -79,7 +79,7 @@ export default function Contact({ closeModal }: ModalProps) {
       });
 
       const result = await response.json();
-      console.log("Response status:", response.status, "Response body:", result); // Лог для діагностики
+      // console.log("Response status:", response.status, "Response body:", result);
 
       if (!response.ok) {
         setFormMessage({

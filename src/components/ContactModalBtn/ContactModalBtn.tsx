@@ -8,7 +8,6 @@ import gsap from "gsap";
 import type { ModalProps } from "../../types/types.ts";
 
 export default function ContactModalBtn({ openModal }: ModalProps) {
-  // export default function ContactModalBtn({ openModal }: ContactModalBtnProps) {
   const phoneRef = useRef(null);
 
   useGSAP(() => {

@@ -1,14 +1,14 @@
+//app
+
 import css from "./App.module.css";
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import Benefits from "../Benefits/Benefits";
-import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
 import Footer from "../Footer/Footer";
 import Contact from "../Contact/Contact";
 import Contact2 from "../Contact2/Contact2";
 import Workflow from "../Workflow/Workflow";
-
-// import type { ModalProps } from "../../types/types.ts";
+import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -22,23 +22,21 @@ export default function App() {
   const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
-    // 1. Capture the current ref value in a constant.
+    // Фіксуємо поточне значення ref у константі
     const currentRef = intersectionRef.current;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Your logic remains the same
         setShowModalBtn(!entry.isIntersecting && !isModalOpen);
       },
       { threshold: 1 }
     );
 
-    // 2. Use the captured value for observing.
+    // Використовуємо отримане значення для спостереження
     if (currentRef) {
       observer.observe(currentRef);
     }
 
-    // 3. Use the captured value in the cleanup function.
+    // Використовуємо отримане значення у функції очищення
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);

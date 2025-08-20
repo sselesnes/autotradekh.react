@@ -1,5 +1,4 @@
 .container {
-  /* height: 40px; */
   padding-top: 24px;
   text-align: center;
   display: flex;
@@ -30,7 +29,6 @@
 .messengers {
   display: flex;
   flex-direction: row;
-  /* gap: 12px; */
   right: 0;
 }
 @media only screen and (max-width: 767px) {
