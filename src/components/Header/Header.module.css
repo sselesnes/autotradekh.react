@@ -39,7 +39,7 @@
   position: absolute;
   right: 0;
 }
-/* old ios safari doesnt support gap*/
+/* old safari/chrome doesn`t support gap*/
 @media only screen and (max-width: 767px) {
   .messengers > * + * {
     margin-left: 0.5rem;

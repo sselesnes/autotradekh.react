@@ -16,10 +16,14 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: 4px;
-  row-gap: 4px;
+  /* column-gap: 4px;
+  row-gap: 4px; */
 }
-
+@media only screen and (max-width: 767px) {
+  .list > * {
+    margin: 4px 0 0 4px;
+  }
+}
 .item {
   position: relative;
   max-width: calc(100% / 2 - 4px);
@@ -34,15 +38,16 @@
 .title {
   bottom: 8px;
   left: 0;
+  right: 0;
   position: absolute;
   text-shadow: 1px 1px 4px #000;
   text-transform: uppercase;
   color: white;
-  opacity: 1; /* Початкова прозорість для плавного зникнення */
-  transition: opacity 0.2s ease-in-out; /* Плавний перехід */
-  font-size: calc(18px + 0.5vw / 0.5);
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  font-size: clamp(0.95rem, 4.5vw, 1.2rem);
+  padding: 0 12px;
 }
-
 .item:hover .title {
   opacity: 0; /* При наведенні робимо елемент прозорим */
 }

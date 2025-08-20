@@ -61,11 +61,6 @@ export default function Header() {
       >
         <a href="/" aria-label="Перейти на головну сторінку">
           <picture>
-            {/* <source media="(max-width: 1279px)" srcSet={`${carT1} 1x, ${carT2} 2x`} /> */}
-            {/* <source
-              srcSet={`${autotradekhLogoPNG} 1x, ${autotradekhLogoPNG} 2x`}
-              type="image/png"
-            /> */}
             <source srcSet={`${autotradekhLogo} 1x, ${autotradekhLogo} 2x`} type="image/webp" />
             <img
               className={css.autotradekh_logo}

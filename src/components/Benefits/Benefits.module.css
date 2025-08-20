@@ -39,8 +39,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  /* gap: 16px; */
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 767px) {
+  .benefit_title > * + * {
+    margin-left: 1rem;
+  }
 }
 .main {
   text-align: left;
