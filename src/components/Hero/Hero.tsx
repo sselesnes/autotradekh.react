@@ -3,15 +3,18 @@
 import css from "./Hero.module.css";
 import carM1 from "../../assets/alfa-romeo-147-shadow-m1.webp";
 import carM2 from "../../assets/alfa-romeo-147-shadow-m2.webp";
+import carPNG from "../../assets/alfa-romeo-147-shadow-m2.webp?format=png&enhanced";
 import carT1 from "../../assets/alfa-romeo-147-shadow-t1.webp";
 import carT2 from "../../assets/alfa-romeo-147-shadow-t2.webp";
 import carD1 from "../../assets/alfa-romeo-147-shadow-t2.webp";
 import handKeyT1 from "../../assets/firefly-hand-key-t1.webp";
 import handKeyT2 from "../../assets/firefly-hand-key-t2.webp";
+import handKeyPNG from "../../assets/firefly-hand-key-t2.webp?format=png&enhanced";
 import handKeyD1 from "../../assets/firefly-hand-key-d1.webp";
 import handKeyD2 from "../../assets/firefly-hand-key-d2.webp";
 import handMoneyT1 from "../../assets/firefly-hand-money-t1.webp";
 import handMoneyT2 from "../../assets/firefly-hand-money-t2.webp";
+import handMoneyPNG from "../../assets/firefly-hand-money-t2.webp?format=png&enhanced";
 import handMoneyD1 from "../../assets/firefly-hand-money-d1.webp";
 import handMoneyD2 from "../../assets/firefly-hand-money-d2.webp";
 import arrow_right from "../../assets/arrow-right.svg";
@@ -71,27 +74,56 @@ export default function Hero({ openModal }: ModalProps) {
       </div>
       <div className={css.car_container}>
         <picture>
-          <source media="(max-width: 414.01px)" srcSet={`${carM1} 1x, ${carM2} 2x`} />
+          <source
+            media="(max-width: 414.01px)"
+            srcSet={`${carM1} 1x, ${carM2} 2x`}
+            type="image/webp"
+          />
           {/* vw414 / img375 */}
-          <source media="(max-width: 1279px)" srcSet={`${carT1} 1x, ${carT2} 2x`} />
-          <source media="(min-width: 1280px)" srcSet={`${carD1} 1x, ${carD1} 2x`} />
+          <source
+            media="(max-width: 1279px)"
+            srcSet={`${carT1} 1x, ${carT2} 2x`}
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 1280px)"
+            srcSet={`${carD1} 1x, ${carD1} 2x`}
+            type="image/webp"
+          />
+          {/* <source srcSet={carPNG} type="image/png" /> */}
           <img
             className={css.car}
-            src={carM1}
+            src={carPNG}
             alt="Aвтомобіль Alfa Romeo 147 кольору металік"
           />
         </picture>
 
         <picture>
-          <source media="(max-width: 380px)" srcSet={`${handKeyT1} 1x, ${handKeyT2} 2x`} />
-          <source media="(min-width: 381px)" srcSet={`${handKeyD1} 1x, ${handKeyD2} 2x`} />
-          <img className={css.hand_key} src={handKeyT1} alt="Рука з ключем від автомобіля" />
+          <source
+            media="(max-width: 380px)"
+            srcSet={`${handKeyT1} 1x, ${handKeyT2} 2x`}
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 381px)"
+            srcSet={`${handKeyD1} 1x, ${handKeyD2} 2x`}
+            type="image/webp"
+          />
+          <img className={css.hand_key} src={handKeyPNG} alt="Рука з ключем від автомобіля" />
         </picture>
 
         <picture>
-          <source media="(max-width: 380px)" srcSet={`${handMoneyT1} 1x, ${handMoneyT2} 2x`} />
-          <source media="(min-width: 381px)" srcSet={`${handMoneyD1} 1x, ${handMoneyD2} 2x`} />
-          <img className={css.hand_money} src={handMoneyT1} alt="Рука з пачкою грошей" />
+          <source
+            media="(max-width: 380px)"
+            srcSet={`${handMoneyT1} 1x, ${handMoneyT2} 2x`}
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 381px)"
+            srcSet={`${handMoneyD1} 1x, ${handMoneyD2} 2x`}
+            type="image/webp"
+          />
+          <img className={css.hand_money} src={handMoneyPNG} alt="Рука з пачкою грошей" />
         </picture>
       </div>
     </section>

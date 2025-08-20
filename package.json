@@ -14,14 +14,10 @@
     "@szhsin/react-accordion": "^1.4.1",
     "@vitejs/plugin-react": "^4.7.0",
     "axios": "^1.9.0",
-    "clsx": "^2.1.1",
-    "gsap": "^3.13.0",
     "modern-normalize": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "terser": "^5.43.1",
-    "use-debounce": "^10.0.4",
-    "yup": "^1.6.1"
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -34,6 +30,8 @@
     "globals": "^16.0.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "vite-imagetools": "^8.0.0",
+    "vite-plugin-image-optimizer": "^2.0.2"
   }
 }

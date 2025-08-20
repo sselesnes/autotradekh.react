@@ -3,10 +3,17 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 // import svgr from "vite-plugin-svgr";
 import legacy from "@vitejs/plugin-legacy";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import { imagetools } from "vite-imagetools";
 
 export default defineConfig({
   plugins: [
     react(),
+    imagetools(),
+    ViteImageOptimizer({
+      webp: { quality: 80 },
+      png: { quality: 80 },
+    }),
     legacy({
       targets: ["safari >= 13", "ios >= 13"], // Для Safari 13
       modernPolyfills: true, // Polyfills для сучасного бандлу
