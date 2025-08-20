@@ -1,7 +1,9 @@
 // header aria
 import css from "./Header.module.css";
 import telegramLogo from "../../assets/telegram.webp";
+import telegramLogoPNG from "../../assets/telegram.webp?format=png&enhanced";
 import viberLogo from "../../assets/viber.webp";
+import viberLogoPNG from "../../assets/viber.webp?format=png&enhanced";
 import autotradekhLogo from "../../assets/autotradekh-logo2.webp";
 import autotradekhLogoPNG from "../../assets/autotradekh-logo2.webp?w=416&format=png&enhanced";
 
@@ -88,7 +90,10 @@ export default function Header() {
             aria-label="Написати у Telegram"
             rel="noopener noreferrer"
           >
-            <img src={telegramLogo} alt="Логотип Telegram" />
+            <picture>
+              <source srcSet={telegramLogo} type="image/webp" />
+              <img src={telegramLogoPNG} alt="Логотип Telegram" />
+            </picture>
           </a>
         </div>
         <div className={css.viber}>
@@ -97,7 +102,10 @@ export default function Header() {
             aria-label="Написати у Viber"
             rel="noopener noreferrer"
           >
-            <img src={viberLogo} alt="Логотип Viber" />
+            <picture>
+              <source srcSet={viberLogo} type="image/webp" />
+              <img src={viberLogoPNG} alt="Логотип Viber" />
+            </picture>
           </a>
         </div>
       </div>
