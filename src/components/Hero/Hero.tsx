@@ -6,7 +6,7 @@ import carM2 from "../../assets/alfa-romeo-147-shadow-m2.webp";
 import carPNG from "../../assets/alfa-romeo-147-shadow-m2.webp?format=png&enhanced";
 import carT1 from "../../assets/alfa-romeo-147-shadow-t1.webp";
 import carT2 from "../../assets/alfa-romeo-147-shadow-t2.webp";
-import carD1 from "../../assets/alfa-romeo-147-shadow-t2.webp";
+import carD1 from "../../assets/alfa-romeo-147-shadow-t2.webp?w=1216&enhanced";
 import handKeyT1 from "../../assets/firefly-hand-key-t1.webp";
 import handKeyT2 from "../../assets/firefly-hand-key-t2.webp";
 import handKeyPNG from "../../assets/firefly-hand-key-t2.webp?format=png&enhanced";
