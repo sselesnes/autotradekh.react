@@ -50,6 +50,34 @@
   width: 24px;
 }
 
+@media only screen and (min-width: 360px) {
+  .container {
+    height: 42px;
+  }
+  .autotradekh_logo {
+    height: 28px;
+  }
+  .tiktok,
+  .telegram,
+  .viber {
+    width: 26px;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .container {
+    height: 44px;
+  }
+  .autotradekh_logo {
+    height: 30px;
+  }
+  .tiktok,
+  .telegram,
+  .viber {
+    width: 28px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     height: auto;
