@@ -6,14 +6,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.autotradekh_logo_wrapper {
+.autotradekh_logo_wrapper img {
   padding: 16px 0;
 }
-
-.autotradekh_logo {
-  max-width: 100%;
-}
-
 .phone {
   text-decoration: none;
   font-size: 24px;
@@ -29,17 +24,17 @@
 .messengers {
   display: flex;
   flex-direction: row;
-  right: 0;
 }
+
 @media only screen and (max-width: 767px) {
   .messengers > * + * {
     margin-left: 0.8rem;
   }
-}
-.tiktok,
-.telegram,
-.viber {
-  width: 28px;
+  .tiktok img,
+  .telegram img,
+  .viber img {
+    width: 28px;
+  }
 }
 .messengers p {
   display: none;
@@ -47,34 +42,40 @@
 
 @media only screen and (min-width: 768px) {
   .container {
-    justify-content: space-around;
+    align-items: center;
   }
   .phone {
     font-size: 32px;
   }
-  .tiktok,
-  .telegram,
-  .viber {
-    display: flex;
-    flex-direction: column;
-    width: 32px;
-  }
   .messengers {
-    gap: 128px;
-  }
-  .messengers a {
     display: flex;
+    gap: 32px;
+  }
+  .tiktok a,
+  .telegram a,
+  .viber a {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    font-weight: 500;
     gap: 8px;
+  }
+
+  .tiktok img,
+  .telegram img,
+  .viber img {
+    width: 32px;
   }
   .messengers p {
     display: block;
+    font-weight: 500;
+  }
+  .autotradekh_logo {
+    width: 1216px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .messengers {
-    gap: 164px;
+    gap: 64px;
   }
   .messengers a {
     font-size: 1.3rem;
