@@ -33,7 +33,7 @@
   border-bottom: 1px solid rgba(var(--blue-soft-rgb), 0.3);
 }
 .ok_icon {
-  width: 32px;
+  width: 24px;
 }
 .benefit_title {
   display: flex;
@@ -77,7 +77,9 @@
     display: flex;
     padding: 24px 0 16px;
   }
-
+  .ok_icon {
+    width: 32px;
+  }
   .main {
     font-size: 1.5rem;
   }
