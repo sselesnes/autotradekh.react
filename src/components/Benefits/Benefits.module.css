@@ -41,7 +41,6 @@
   align-items: center;
   text-transform: uppercase;
 }
-
 @media only screen and (max-width: 767px) {
   .benefit_title > * + * {
     margin-left: 1rem;
@@ -50,11 +49,10 @@
 .main {
   text-align: left;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   color: var(--main);
 }
-
 .describe {
   padding-top: 4px;
   text-align: justify;
