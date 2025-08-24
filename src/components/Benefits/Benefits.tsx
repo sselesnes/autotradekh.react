@@ -72,18 +72,18 @@ export default function Benefits() {
                   header={
                     <div className={css.benefit_title}>
                       <img src={png_ok} className={css.ok_icon} alt="Іконка ok" aria-hidden />
-                      <h2 className={css.main}>{benefit.title}</h2>
+                      <span className={css.main}>{benefit.title}</span>
                     </div>
                   }
                 >
-                  <p
+                  <h4
                     className={css.describe}
                     id={`benefit-panel-${index}`}
                     aria-labelledby={`benefit-title-${index}`}
                     role="region"
                   >
                     {benefit.describe}
-                  </p>
+                  </h4>
                 </AccordionItem>
               </li>
             ))}
