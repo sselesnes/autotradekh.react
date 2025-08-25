@@ -9,6 +9,9 @@
   text-transform: uppercase;
   color: var(--main);
 }
+.banner_main span {
+  display: none;
+}
 .banner_content {
   padding: 24px 0;
   display: block;

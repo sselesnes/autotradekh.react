@@ -48,7 +48,7 @@ export default function Hero({ openModal }: ModalProps) {
   return (
     <section aria-labelledby="hero-title" className={css.hero}>
       <h1 id="hero-title" className={css.banner_main}>
-        Терміновий викуп авто в Харкові
+        <span>Автовикуп Харків: </span>Терміновий викуп авто
       </h1>
       <p className={css.banner_content}>
         Наш сервіс пропонує швидкий і безпечний викуп автомобілів.
