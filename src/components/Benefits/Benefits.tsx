@@ -61,7 +61,7 @@ export default function Benefits() {
   return (
     <section aria-labelledby="benefits-title" className={css.benefits}>
       <h1 id="benefits-title" className={css.benefits_title}>
-        ЧОМУ ПОНАД 1000+ КЛІЄНТІВ ВИБРАЛИ AUTOTRADEKH?
+        Чому понад 1000+ клієнтів вже вибрали автовикуп AUTOTRADEKH у Харкові?
       </h1>
       {benefits.length > 0 && (
         <Accordion transition transitionTimeout={250}>
