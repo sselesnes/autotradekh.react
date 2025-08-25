@@ -69,7 +69,7 @@ export default function Workflow() {
   return (
     <section role="region" aria-labelledby="workflow-title">
       <h2 id="workflow-title" className={css.workflow_title}>
-        Як це працює?
+        Як працює автовикуп у Харкові: покрокова інструкція
       </h2>
       <ul className={css.list} aria-label="Покроковий процес викупу авто">
         {workflowList.map((workflow, index) => (
