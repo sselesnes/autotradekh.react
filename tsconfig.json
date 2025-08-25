@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "target": "es5",
-    "module": "esnext",
+    "target": "ES2020",
+    "module": "ESnext",
     "jsx": "react-jsx",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2015"]
+    "lib": ["DOM", "DOM.Iterable", "ES2020"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
