@@ -60,9 +60,9 @@ const benefits = [
 export default function Benefits() {
   return (
     <section aria-labelledby="benefits-title" className={css.benefits}>
-      <h1 id="benefits-title" className={css.benefits_title}>
+      <h2 id="benefits-title" className={css.benefits_title}>
         Чому понад 1000+ клієнтів вже вибрали автовикуп AUTOTRADEKH у Харкові?
-      </h1>
+      </h2>
       {benefits.length > 0 && (
         <Accordion transition transitionTimeout={250}>
           <ul className={css.benefits_list} role="list">

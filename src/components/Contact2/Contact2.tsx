@@ -23,7 +23,7 @@ export default function Contact2({ openModal }: ModalProps) {
   return (
     <section role="region" aria-labelledby="contact2-title">
       <h2 id="contact2-title" className={css.banner_main}>
-        Отримайте гроші за авто вже сьогодні: автовикуп у Харкові
+        Отримайте гроші за авто вже сьогодні<span>: автовикуп у Харкові</span>
       </h2>
       <p className={css.banner_content}>
         <strong>Лише один крок відділяє Вас від мети.</strong> Залиште свою заявку і наша
