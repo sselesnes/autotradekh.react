@@ -1,16 +1,26 @@
+.error_vh {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100dvh;
+}
 .error_title {
+  padding-top: 24px;
   font-size: 1.2rem;
 }
 .error_text {
-  font-size: 0.6rem;
+  padding-top: 8px;
+  font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 768px) {
   .error_title {
+    padding-top: 32px;
     font-size: 2rem;
   }
   .error_text {
-    font-size: 1rem;
+    padding-top: 12px;
+    font-size: 1.2rem;
   }
 }
 

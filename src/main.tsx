@@ -1,10 +1,13 @@
-import App from "./components/App/App";
+// main
+
 import "modern-normalize";
 import "./css/styles.css";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import App from "./components/App/App";
 import NotFound from "./components/NotFound/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
