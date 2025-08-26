@@ -10,7 +10,7 @@ export default function NotFound() {
       <div className={styles.error_vh}>
         <Header />
         <div>
-          <h1 className={styles.error_title}>404 - Сторінку не знайдено</h1>
+          <h2 className={styles.error_title}>404 - Сторінку не знайдено</h2>
           <p className={styles.error_text}>Тобто тут нічого нема</p>
         </div>
         <Footer />
