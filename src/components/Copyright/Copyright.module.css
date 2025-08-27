@@ -7,17 +7,19 @@
   bottom: 4px;
   right: 8px;
   padding: 0;
-  transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out, visibility 5s ease-in-out;
 }
 .main > * + * {
   margin-left: 0.2rem;
 }
 
 .visible {
-  display: block;
+  /* display: block; */
+  visibility: visible;
   opacity: 0.5;
 }
 .hidden {
-  display: none;
-  opacity: 1;
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
 }
