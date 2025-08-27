@@ -14,14 +14,10 @@ import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
 import { useState, useEffect, useRef } from "react";
 
 export default function App() {
-  // Єдиний стан для модального вікна
+  // модал трубка зникає якщо footer у viewport`і
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showModalBtn, setShowModalBtn] = useState(true);
   const intersectionRef = useRef<HTMLDivElement>(null);
-
-  const [showCopyright, setShowCopyright] = useState(false);
-  const intersectionRef2 = useRef<HTMLDivElement>(null);
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -48,23 +44,21 @@ export default function App() {
     };
   }, [isModalOpen]);
 
+  // copyright з'являється якщо copyright у viewport`і =)
+  const [showCopyright, setShowCopyright] = useState(false);
   useEffect(() => {
-    const currentRef = intersectionRef2.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowCopyright(entry.isIntersecting);
-      },
-      { threshold: 1 }
-    );
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
+    const handleScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 1) {
+        setShowCopyright(true);
+      } else {
+        setShowCopyright(false);
       }
     };
-  });
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className={css.container}>
@@ -77,7 +71,7 @@ export default function App() {
         <Contact2 openModal={openModal} />
       </div>
       <Footer />
-      <div ref={intersectionRef2}>{showCopyright && <Copyright />}</div>
+      {showCopyright && <Copyright />}
       {showModalBtn && <ContactModalBtn openModal={openModal} />}
     </div>
   );
