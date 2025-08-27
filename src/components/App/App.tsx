@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import Contact from "../Contact/Contact";
 import Contact2 from "../Contact2/Contact2";
 import Workflow from "../Workflow/Workflow";
+import Copyright from "../Copyright/Copyright";
 import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
 
 import { useState, useEffect, useRef } from "react";
@@ -17,6 +18,9 @@ export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showModalBtn, setShowModalBtn] = useState(true);
   const intersectionRef = useRef<HTMLDivElement>(null);
+
+  const [showCopyright, setShowCopyright] = useState(false);
+  const intersectionRef2 = useRef<HTMLDivElement>(null);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -44,6 +48,24 @@ export default function App() {
     };
   }, [isModalOpen]);
 
+  useEffect(() => {
+    const currentRef = intersectionRef2.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowCopyright(entry.isIntersecting);
+      },
+      { threshold: 1 }
+    );
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  });
+
   return (
     <div className={css.container}>
       <Header />
@@ -55,6 +77,7 @@ export default function App() {
         <Contact2 openModal={openModal} />
       </div>
       <Footer />
+      <div ref={intersectionRef2}>{showCopyright && <Copyright />}</div>
       {showModalBtn && <ContactModalBtn openModal={openModal} />}
     </div>
   );
