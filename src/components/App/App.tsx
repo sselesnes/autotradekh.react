@@ -71,7 +71,7 @@ export default function App() {
         <Contact2 openModal={openModal} />
       </div>
       <Footer />
-      {showCopyright && <Copyright />}
+      <Copyright isVisible={showCopyright} />
       {showModalBtn && <ContactModalBtn openModal={openModal} />}
     </div>
   );

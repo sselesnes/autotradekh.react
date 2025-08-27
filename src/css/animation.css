@@ -10,3 +10,12 @@ button:hover {
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out,
     background-color 0.2s ease-in-out;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

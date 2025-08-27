@@ -1,13 +1,21 @@
 .main {
   display: flex;
   justify-content: end;
-  font-size: 8px;
+  font-size: 7px;
+  font-weight: 600;
   position: fixed;
   bottom: 4px;
   right: 8px;
   padding: 0;
+  transition: opacity 100ms ease-in-out;
 }
-
 .main > * + * {
   margin-left: 0.2rem;
+}
+
+.visible {
+  opacity: 0.33;
+}
+.hidden {
+  opacity: 0;
 }
