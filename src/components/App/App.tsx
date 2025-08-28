@@ -48,7 +48,7 @@ export default function App() {
   const [showCopyright, setShowCopyright] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 1) {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 1.33) {
         setShowCopyright(true);
       } else {
         setShowCopyright(false);
