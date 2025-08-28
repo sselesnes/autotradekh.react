@@ -13,16 +13,18 @@
   display: none;
 }
 .banner_content {
-  padding: 24px 0;
+  padding-top: 24px;
   display: block;
   text-align: justify;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.1;
   color: var(--black);
+  display: block;
+  text-align: justify;
 }
 .banner_sub {
-  padding-top: 24px;
+  padding-top: 32px;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
@@ -30,13 +32,17 @@
   color: var(--main);
   position: relative;
 }
+.banner_sub p {
+  color: var(--main);
+  padding: 16px 0 8px;
+}
 .arrow_left,
 .arrow_right {
   position: absolute;
   width: 40px;
-  top: 10%;
+  top: 16%;
   bottom: auto;
-  left: -7%;
+  left: -6%;
 }
 .arrow_right {
   top: auto;
@@ -44,14 +50,12 @@
   left: 93%;
   transform: scaleX(-1);
 }
-
 .car_container {
   padding: 32px 0;
   position: relative;
   display: inline-block;
   width: 100%;
 }
-
 .car {
   width: 100%;
   display: block;
@@ -68,7 +72,6 @@
   bottom: -40px;
   right: -7.5%;
 }
-
 .button {
   padding: 8px 16px;
   background-color: var(--main);
@@ -83,28 +86,27 @@
 .button:hover {
   background-color: var(--main-soft);
 }
-
 .button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-.banner_sub p {
-  color: var(--main);
-  padding: 24px 0 16px;
-}
+
 @media only screen and (min-width: 360px) {
+  .banner_sub p {
+    padding: 24px 0 16px;
+  }
   .arrow_left,
   .arrow_right {
     position: absolute;
     width: 40px;
-    top: 10%;
+    top: 16%;
     bottom: auto;
-    left: -2%;
+    left: 2%;
   }
   .arrow_right {
     top: auto;
     bottom: 0;
-    left: 90%;
+    left: 87%;
     transform: scaleX(-1);
   }
 }
@@ -115,14 +117,14 @@
   }
   .banner_content {
     font-size: 1.5rem;
-    padding: 32px 66px;
-    text-align: center;
+    padding-top: 32px;
   }
   .banner_sub {
-    padding-top: 24px;
+    padding-top: 48px;
     font-size: 2.5rem;
   }
   .banner_sub p {
+    padding: 32px 0 24px;
     font-size: 2rem;
   }
   .button {
@@ -130,14 +132,14 @@
   }
   .arrow_left,
   .arrow_right {
-    top: 6%;
+    top: 16%;
     width: 64px;
-    left: 16%;
+    left: 12%;
   }
   .arrow_right {
     top: auto;
     bottom: -2%;
-    left: 75.7%;
+    left: 80%;
   }
 
   .car_container {
@@ -153,17 +155,26 @@
   }
 }
 
+@media only screen and (min-width: 960px) {
+  .arrow_left,
+  .arrow_right {
+    left: 22%;
+  }
+  .arrow_right {
+    left: 72%;
+  }
+}
 @media only screen and (min-width: 1280px) {
   .arrow_left,
   .arrow_right {
-    top: 6%;
+    top: 16%;
     width: 64px;
-    left: 30.2%;
+    left: 28%;
   }
   .arrow_right {
     top: auto;
     bottom: -2%;
-    left: 65%;
+    left: 67%;
   }
   .hand_key {
     width: 240px;

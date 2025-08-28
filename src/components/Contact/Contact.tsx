@@ -42,7 +42,7 @@ export default function Contact({ closeModal }: ModalProps) {
       .then(res => res.json())
       .then(data => setCsrfToken(data.csrf_token))
       .catch(() => {
-        setFormMessage({ text: "Помилка: Не вдалося отримати CSRF-токен", status: "error" });
+        setFormMessage({ text: "Не вдалося отримати CSRF-токен", status: "error" });
       });
 
     if (modalRef.current) {
@@ -65,7 +65,7 @@ export default function Contact({ closeModal }: ModalProps) {
 
     const phoneRegex = /^\+?[0-9\s\-()]{7,15}$/;
     if (!phoneRegex.test(formData.phone)) {
-      setFormMessage({ text: "Помилка: Некоректний номер телефону", status: "error" });
+      setFormMessage({ text: "Некоректний номер телефону", status: "error" });
       setIsSubmitting(false);
       return;
     }
@@ -83,7 +83,7 @@ export default function Contact({ closeModal }: ModalProps) {
 
       if (!response.ok) {
         setFormMessage({
-          text: result.message || "Помилка: Невідома помилка сервера",
+          text: result.message || "Невідома помилка сервера",
           status: "error",
         });
         setIsSubmitting(false);
@@ -106,7 +106,7 @@ export default function Contact({ closeModal }: ModalProps) {
         errorMessage = error.message || errorMessage;
       }
       setFormMessage({
-        text: `Помилка: ${errorMessage}`,
+        text: `${errorMessage}`,
         status: "error",
       });
     } finally {

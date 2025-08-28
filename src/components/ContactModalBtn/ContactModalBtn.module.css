@@ -14,8 +14,8 @@
 .modalBtn {
   z-index: 2;
   position: fixed;
-  right: 32px;
-  bottom: 24px;
+  right: 8px;
+  bottom: 32px;
   padding: 6px 10px;
   border-radius: 12px;
   overflow: hidden;
