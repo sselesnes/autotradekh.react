@@ -21,6 +21,9 @@
   line-height: 1.1;
   color: var(--black);
 }
+.banner_content h3 {
+  text-align: center;
+}
 .button {
   padding: 8px 16px;
   background-color: var(--main);
@@ -58,6 +61,6 @@
   .arrow_left {
     width: 64px;
     bottom: -8%;
-    left: -20%;
+    left: -28%;
   }
 }

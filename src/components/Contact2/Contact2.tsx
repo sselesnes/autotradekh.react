@@ -34,7 +34,10 @@ export default function Contact2({ openModal }: ModalProps) {
         <img className={css.arrow_left} src={arrow_right} alt="" aria-hidden="true" />
       </button>
       <p className={css.banner_content}>
-        Ми зв’яжемось із Вами у найкоротший термін, щоб узгодити всі деталі.
+        Наш фахівець зв'яжеться з Вами протягом 15 хвилин, щоб узгодити всі деталі та
+        запропонувати <strong>найкращу ціну</strong> за Ваше авто.<br></br>
+        <br></br>
+        <h3>Ми зробили автовикуп швидким та безпечним!</h3>
       </p>
     </section>
   );
