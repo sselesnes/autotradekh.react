@@ -104,6 +104,7 @@ export default function Hero({ openModal }: ModalProps) {
             className={css.car}
             src={carPNG}
             alt="Aвтомобіль Alfa Romeo 147 кольору металік"
+            fetchPriority="high"
           />
         </picture>
 
