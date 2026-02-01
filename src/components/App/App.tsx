@@ -10,6 +10,7 @@ import Contact2 from "../Contact2/Contact2";
 import Workflow from "../Workflow/Workflow";
 import Copyright from "../Copyright/Copyright";
 import ContactModalBtn from "../ContactModalBtn/ContactModalBtn";
+import HonorModal from "../HonorModal/HonorModal";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -21,6 +22,37 @@ export default function App() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  // Хвилина загальнонаціональної пошани
+  const [showModalHonor, setShowModalHonor] = useState(false);
+  useEffect(() => {
+    const check = () => {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      if (hours === 9 && minutes === 0) {
+        setShowModalHonor(prev => {
+          if (!prev) {
+            return true;
+          }
+          return prev;
+        });
+      } else {
+        setShowModalHonor(prev => {
+          if (prev) {
+            return false;
+          }
+          return prev;
+        });
+      }
+    };
+
+    check();
+    const timer = setInterval(check, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     // Фіксуємо поточне значення ref у константі
     const currentRef = intersectionRef.current;
@@ -28,7 +60,7 @@ export default function App() {
       ([entry]) => {
         setShowModalBtn(!entry.isIntersecting && !isModalOpen);
       },
-      { threshold: 1 }
+      { threshold: 1 },
     );
 
     // Використовуємо отримане значення для спостереження
@@ -73,6 +105,7 @@ export default function App() {
       <Footer />
       <Copyright isVisible={showCopyright} />
       {showModalBtn && <ContactModalBtn openModal={openModal} />}
+      {showModalHonor && <HonorModal />}
     </div>
   );
 }
